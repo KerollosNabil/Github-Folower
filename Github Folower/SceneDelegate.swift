@@ -21,21 +21,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
     }
     
-    func createSearchNC() -> UINavigationController {
+    private func createSearchNC() -> UINavigationController {
         let searchVC = SearchVC()
         searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         searchVC.title = "Search"
         return searchVC.embedInNavigationController()
     }
     
-    func createFavorateNC() -> UINavigationController {
+    private func createFavorateNC() -> UINavigationController {
         let favoriteVC = FavoriteVC()
         favoriteVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
         favoriteVC.title = "Favorites"
         return favoriteVC.embedInNavigationController()
     }
     
-    func createTabBar(viewControllers:[UIViewController]) -> UITabBarController {
+    private func createTabBar(viewControllers:[UIViewController]) -> UITabBarController {
         let tabBar = UITabBarController()
         UITabBar.appearance().tintColor = .systemGreen
         tabBar.viewControllers = viewControllers
