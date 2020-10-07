@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		0453400F252D4CFE003A9DA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453400E252D4CFE003A9DA6 /* AppDelegate.swift */; };
 		04534011252D4CFE003A9DA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04534010252D4CFE003A9DA6 /* SceneDelegate.swift */; };
-		04534013252D4CFE003A9DA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04534012252D4CFE003A9DA6 /* ViewController.swift */; };
 		04534018252D4D02003A9DA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04534017252D4D02003A9DA6 /* Assets.xcassets */; };
 		0453401B252D4D02003A9DA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04534019252D4D02003A9DA6 /* LaunchScreen.storyboard */; };
 		04534026252D4D03003A9DA6 /* Github_FolowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04534025252D4D03003A9DA6 /* Github_FolowerTests.swift */; };
 		04534031252D4D03003A9DA6 /* Github_FolowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04534030252D4D03003A9DA6 /* Github_FolowerUITests.swift */; };
+		0453404B252E0CF4003A9DA6 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453404A252E0CF4003A9DA6 /* SearchVC.swift */; };
+		04F13997252E0E2500332934 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F13996252E0E2500332934 /* FavoriteVC.swift */; };
+		04F1399D252E0ED900332934 /* ViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1399C252E0ED900332934 /* ViewController+Navigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,6 @@
 		0453400B252D4CFE003A9DA6 /* Github Folower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Github Folower.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0453400E252D4CFE003A9DA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04534010252D4CFE003A9DA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04534012252D4CFE003A9DA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		04534017252D4D02003A9DA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0453401A252D4D02003A9DA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0453401C252D4D02003A9DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +48,9 @@
 		0453402C252D4D03003A9DA6 /* Github FolowerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Github FolowerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04534030252D4D03003A9DA6 /* Github_FolowerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Github_FolowerUITests.swift; sourceTree = "<group>"; };
 		04534032252D4D03003A9DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0453404A252E0CF4003A9DA6 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		04F13996252E0E2500332934 /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = SOURCE_ROOT; };
+		04F1399C252E0ED900332934 /* ViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Navigation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +103,8 @@
 			children = (
 				0453400E252D4CFE003A9DA6 /* AppDelegate.swift */,
 				04534010252D4CFE003A9DA6 /* SceneDelegate.swift */,
-				04534012252D4CFE003A9DA6 /* ViewController.swift */,
+				04F1399B252E0E6500332934 /* extentions */,
+				0453404F252E0D23003A9DA6 /* view controllers */,
 				04534017252D4D02003A9DA6 /* Assets.xcassets */,
 				04534019252D4D02003A9DA6 /* LaunchScreen.storyboard */,
 				0453401C252D4D02003A9DA6 /* Info.plist */,
@@ -123,6 +128,23 @@
 				04534032252D4D03003A9DA6 /* Info.plist */,
 			);
 			path = "Github FolowerUITests";
+			sourceTree = "<group>";
+		};
+		0453404F252E0D23003A9DA6 /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04F13996252E0E2500332934 /* FavoriteVC.swift */,
+				0453404A252E0CF4003A9DA6 /* SearchVC.swift */,
+			);
+			path = "view controllers";
+			sourceTree = "<group>";
+		};
+		04F1399B252E0E6500332934 /* extentions */ = {
+			isa = PBXGroup;
+			children = (
+				04F1399C252E0ED900332934 /* ViewController+Navigation.swift */,
+			);
+			path = extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +276,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04534013252D4CFE003A9DA6 /* ViewController.swift in Sources */,
+				04F13997252E0E2500332934 /* FavoriteVC.swift in Sources */,
+				0453404B252E0CF4003A9DA6 /* SearchVC.swift in Sources */,
+				04F1399D252E0ED900332934 /* ViewController+Navigation.swift in Sources */,
 				0453400F252D4CFE003A9DA6 /* AppDelegate.swift in Sources */,
 				04534011252D4CFE003A9DA6 /* SceneDelegate.swift in Sources */,
 			);
