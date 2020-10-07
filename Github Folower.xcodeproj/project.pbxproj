@@ -16,6 +16,8 @@
 		0453404B252E0CF4003A9DA6 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453404A252E0CF4003A9DA6 /* SearchVC.swift */; };
 		04F13997252E0E2500332934 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F13996252E0E2500332934 /* FavoriteVC.swift */; };
 		04F1399D252E0ED900332934 /* ViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1399C252E0ED900332934 /* ViewController+Navigation.swift */; };
+		04F139A9252E755B00332934 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F139A8252E755B00332934 /* RoundedButton.swift */; };
+		04F139AE252E7D2600332934 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F139AD252E7D2600332934 /* RoundedTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		0453404A252E0CF4003A9DA6 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		04F13996252E0E2500332934 /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = SOURCE_ROOT; };
 		04F1399C252E0ED900332934 /* ViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Navigation.swift"; sourceTree = "<group>"; };
+		04F139A8252E755B00332934 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoundedButton.swift; path = "Github Folower/RoundedButton.swift"; sourceTree = SOURCE_ROOT; };
+		04F139AD252E7D2600332934 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 			children = (
 				0453400E252D4CFE003A9DA6 /* AppDelegate.swift */,
 				04534010252D4CFE003A9DA6 /* SceneDelegate.swift */,
+				04F139A7252E725400332934 /* views */,
 				04F1399B252E0E6500332934 /* extentions */,
 				0453404F252E0D23003A9DA6 /* view controllers */,
 				04534017252D4D02003A9DA6 /* Assets.xcassets */,
@@ -145,6 +150,15 @@
 				04F1399C252E0ED900332934 /* ViewController+Navigation.swift */,
 			);
 			path = extentions;
+			sourceTree = "<group>";
+		};
+		04F139A7252E725400332934 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				04F139A8252E755B00332934 /* RoundedButton.swift */,
+				04F139AD252E7D2600332934 /* RoundedTextField.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,8 +291,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F13997252E0E2500332934 /* FavoriteVC.swift in Sources */,
+				04F139A9252E755B00332934 /* RoundedButton.swift in Sources */,
 				0453404B252E0CF4003A9DA6 /* SearchVC.swift in Sources */,
 				04F1399D252E0ED900332934 /* ViewController+Navigation.swift in Sources */,
+				04F139AE252E7D2600332934 /* RoundedTextField.swift in Sources */,
 				0453400F252D4CFE003A9DA6 /* AppDelegate.swift in Sources */,
 				04534011252D4CFE003A9DA6 /* SceneDelegate.swift in Sources */,
 			);

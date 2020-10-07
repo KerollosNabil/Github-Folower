@@ -8,11 +8,14 @@
 import UIKit
 
 class SearchVC: UIViewController {
-
+    let usernameTF = RoundedTextField()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .systemBackground
+    }
+    private func configureUsernameTF(){
+        
     }
 
 }
