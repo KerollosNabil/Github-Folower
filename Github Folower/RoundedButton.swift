@@ -20,13 +20,17 @@ class RoundedButton: UIButton {
     
     init(backgroungColor:UIColor, title:String) {
         super.init(frame: .zero)
-        self.backgroundColor = backgroundColor
+        self.backgroundColor = backgroungColor
         self.setTitle(title, for: .normal)
         configur()
     }
-    override func layoutMarginsDidChange() {
-        layer.cornerRadius = min(bounds.height, bounds.width) / 4.0
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        layer.cornerRadius = min(bounds.height, bounds.width) / 2.0
+
     }
+    
     private func configur(){
         // TODO : remove comment
        // layer.cornerRadius = 10
