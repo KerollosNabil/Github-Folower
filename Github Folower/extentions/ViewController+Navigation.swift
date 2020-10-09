@@ -11,4 +11,5 @@ extension UIViewController {
     func embedInNavigationController() -> UINavigationController {
         return UINavigationController(rootViewController: self)
     }
+    
 }

@@ -11,13 +11,16 @@ class SearchVC: UIViewController {
     let logoImageView = UIImageView()
     let usernameTF = RoundedTextField(placeholder: "Enter a Username")
     let getFollowersButton = RoundedButton(backgroungColor: .systemGreen, title: "Get Followers")
+    
+    let autolayoutHelper = AutolayoutHelper(designingDevice: .xsMaxAnd11ProMaxAnd11AndXr)
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(view.bounds)
         view.backgroundColor = .systemBackground
         configureLogoImageView()
         configureUsernameTF()
         configureGetFollowersButton()
+        autolayoutHelper.sharedConstraints.activate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,11 +35,11 @@ class SearchVC: UIViewController {
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: view.bounds.height * view.fractionOf896HeightFrom(points: 80)),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.widthAnchor.constraint(equalToConstant: 200),
-            logoImageView.heightAnchor.constraint(equalToConstant: 200)
+            
         ])
+        autolayoutHelper.addViewSizeConstrainsGuidedByWidth(viewSize: CGSize(width: 200, height: 200), view: logoImageView, containerView: view, for: .forsharedConstraints)
     }
     
     private func configureUsernameTF(){
@@ -44,12 +47,14 @@ class SearchVC: UIViewController {
         
         
         usernameTF.translatesAutoresizingMaskIntoConstraints = false
+        
+        
         NSLayoutConstraint.activate([
-            usernameTF.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 48),
-            usernameTF.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            usernameTF.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            usernameTF.heightAnchor.constraint(equalToConstant: 50)
+            usernameTF.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: view.bounds.height * view.fractionOf896HeightFrom(points: 48)),
+            usernameTF.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
         ])
+        autolayoutHelper.addViewSizeConstrainsGuidedByWidth(viewSize: CGSize(width: 314, height: 50), view: usernameTF, containerView: view, for: .forsharedConstraints)
     }
     
     private func configureGetFollowersButton(){
@@ -58,10 +63,11 @@ class SearchVC: UIViewController {
         
         getFollowersButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            getFollowersButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-            getFollowersButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            getFollowersButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            getFollowersButton.heightAnchor.constraint(equalToConstant: 50)
+            getFollowersButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: view.bounds.height * view.fractionOf896HeightFrom(points: -50)),
+            getFollowersButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+//            getFollowersButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+        autolayoutHelper.addViewSizeConstrainsGuidedByWidth(viewSize: CGSize(width: 314, height: 50), view: getFollowersButton, containerView: view, for: .forsharedConstraints)
     }
+
 }

@@ -32,8 +32,7 @@ class RoundedButton: UIButton {
     }
     
     private func configur(){
-        // TODO : remove comment
-       // layer.cornerRadius = 10
+        
         titleLabel?.textColor = .white
         titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
         translatesAutoresizingMaskIntoConstraints = false
