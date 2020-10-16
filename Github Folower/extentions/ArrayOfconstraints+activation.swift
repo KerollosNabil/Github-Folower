@@ -9,10 +9,15 @@ import UIKit
 
 extension Array where Element : NSLayoutConstraint {
     func activate() {
+        NSLayoutConstraint.activate(self)
         if !isEmpty, !self[0].isActive {
-            NSLayoutConstraint.activate(self)
+            
         }
-        
-        
+    }
+    func deactivate() {
+        NSLayoutConstraint.deactivate(self)
+        if !isEmpty, self[0].isActive {
+            
+        }
     }
 }

@@ -14,13 +14,15 @@
 		04534026252D4D03003A9DA6 /* Github_FolowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04534025252D4D03003A9DA6 /* Github_FolowerTests.swift */; };
 		04534031252D4D03003A9DA6 /* Github_FolowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04534030252D4D03003A9DA6 /* Github_FolowerUITests.swift */; };
 		0453404B252E0CF4003A9DA6 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453404A252E0CF4003A9DA6 /* SearchVC.swift */; };
+		049D218325391B6300902747 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D218225391B6300902747 /* String+Ext.swift */; };
 		04F13997252E0E2500332934 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F13996252E0E2500332934 /* FavoriteVC.swift */; };
 		04F1399D252E0ED900332934 /* ViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1399C252E0ED900332934 /* ViewController+Navigation.swift */; };
 		04F139A9252E755B00332934 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F139A8252E755B00332934 /* RoundedButton.swift */; };
 		04F139AE252E7D2600332934 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F139AD252E7D2600332934 /* RoundedTextField.swift */; };
-		04F139BE252F811E00332934 /* UIView+fraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F139BD252F811E00332934 /* UIView+fraction.swift */; };
 		04F139C3252FE0C600332934 /* AutolayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F139C2252FE0C600332934 /* AutolayoutHelper.swift */; };
 		04F139CB253021BF00332934 /* ArrayOfconstraints+activation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F139CA253021BF00332934 /* ArrayOfconstraints+activation.swift */; };
+		04F139D92535055F00332934 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F139D82535055E00332934 /* Devices.swift */; };
+		04F139E42535107F00332934 /* DeviceTraitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F139E32535107F00332934 /* DeviceTraitManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,13 +56,15 @@
 		04534030252D4D03003A9DA6 /* Github_FolowerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Github_FolowerUITests.swift; sourceTree = "<group>"; };
 		04534032252D4D03003A9DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0453404A252E0CF4003A9DA6 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		049D218225391B6300902747 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Ext.swift"; path = "Github Folower/String+Ext.swift"; sourceTree = SOURCE_ROOT; };
 		04F13996252E0E2500332934 /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = SOURCE_ROOT; };
 		04F1399C252E0ED900332934 /* ViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Navigation.swift"; sourceTree = "<group>"; };
 		04F139A8252E755B00332934 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoundedButton.swift; path = "Github Folower/RoundedButton.swift"; sourceTree = SOURCE_ROOT; };
 		04F139AD252E7D2600332934 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
-		04F139BD252F811E00332934 /* UIView+fraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+fraction.swift"; sourceTree = "<group>"; };
 		04F139C2252FE0C600332934 /* AutolayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutHelper.swift; sourceTree = "<group>"; };
 		04F139CA253021BF00332934 /* ArrayOfconstraints+activation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrayOfconstraints+activation.swift"; sourceTree = "<group>"; };
+		04F139D82535055E00332934 /* Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
+		04F139E32535107F00332934 /* DeviceTraitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTraitManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +115,6 @@
 		0453400D252D4CFE003A9DA6 /* Github Folower */ = {
 			isa = PBXGroup;
 			children = (
-				04F139C2252FE0C600332934 /* AutolayoutHelper.swift */,
 				0453400E252D4CFE003A9DA6 /* AppDelegate.swift */,
 				04534010252D4CFE003A9DA6 /* SceneDelegate.swift */,
 				04F139A7252E725400332934 /* views */,
@@ -154,9 +157,12 @@
 		04F1399B252E0E6500332934 /* extentions */ = {
 			isa = PBXGroup;
 			children = (
+				04F139E32535107F00332934 /* DeviceTraitManager.swift */,
+				049D218225391B6300902747 /* String+Ext.swift */,
+				04F139D82535055E00332934 /* Devices.swift */,
+				04F139C2252FE0C600332934 /* AutolayoutHelper.swift */,
 				04F1399C252E0ED900332934 /* ViewController+Navigation.swift */,
 				04F139CA253021BF00332934 /* ArrayOfconstraints+activation.swift */,
-				04F139BD252F811E00332934 /* UIView+fraction.swift */,
 			);
 			path = extentions;
 			sourceTree = "<group>";
@@ -301,12 +307,14 @@
 			files = (
 				04F13997252E0E2500332934 /* FavoriteVC.swift in Sources */,
 				04F139A9252E755B00332934 /* RoundedButton.swift in Sources */,
-				04F139BE252F811E00332934 /* UIView+fraction.swift in Sources */,
 				0453404B252E0CF4003A9DA6 /* SearchVC.swift in Sources */,
 				04F1399D252E0ED900332934 /* ViewController+Navigation.swift in Sources */,
 				04F139CB253021BF00332934 /* ArrayOfconstraints+activation.swift in Sources */,
+				04F139E42535107F00332934 /* DeviceTraitManager.swift in Sources */,
+				049D218325391B6300902747 /* String+Ext.swift in Sources */,
 				04F139AE252E7D2600332934 /* RoundedTextField.swift in Sources */,
 				0453400F252D4CFE003A9DA6 /* AppDelegate.swift in Sources */,
+				04F139D92535055F00332934 /* Devices.swift in Sources */,
 				04F139C3252FE0C600332934 /* AutolayoutHelper.swift in Sources */,
 				04534011252D4CFE003A9DA6 /* SceneDelegate.swift in Sources */,
 			);
@@ -487,7 +495,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Kerollos.Nabil.Fahmy.KNF.Github-Folower";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -507,7 +515,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Kerollos.Nabil.Fahmy.KNF.Github-Folower";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
