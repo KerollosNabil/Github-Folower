@@ -12,6 +12,8 @@ class SearchVC: UIViewController {
     let usernameTF = RoundedTextField(placeholder: "Enter a Username")
     let getFollowersButton = RoundedButton(backgroungColor: .systemGreen, title: "Get Followers")
     
+    private var isUsernameEntered:Bool{!usernameTF.text!.isEmpty}
+    
     var autolayoutHelper : AutolayoutHelper! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,7 @@ class SearchVC: UIViewController {
         configureUsernameTF()
         configureGetFollowersButton()
         autolayoutHelper.startLayout()
+        createDismissKeyboardTapGeature(to: self.view)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,10 +32,21 @@ class SearchVC: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
+    func createDismissKeyboardTapGeature(to view:UIView){
+        let dismissKeyboardTapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(dismissKeyboardTapGesture)
+    }
     
-    
-    
-    
+    @objc func pushFollowesListVC(){
+        guard isUsernameEntered else {
+            presentGFAlertOnMainThread(title: "Empty Username", message: "Please enter a username. We need to know who to look for 😀.", buttontitle: "Ok")
+            return
+        }
+        let followersListVC = FollowerListVC()
+        followersListVC.userName = usernameTF.text
+        followersListVC.title = usernameTF.text
+        navigationController?.pushViewController(followersListVC, animated: true)
+    }
     
     private func configureLogoImageView(){
         view.addSubview(logoImageView)
@@ -56,6 +70,8 @@ class SearchVC: UIViewController {
     private func configureUsernameTF(){
         view.addSubview(usernameTF)
         usernameTF.translatesAutoresizingMaskIntoConstraints = false
+        usernameTF.delegate = self
+        usernameTF.returnKeyType = .go
     
         autolayoutHelper.attatchScalably(anchor: usernameTF.topAnchor, to: logoImageView.bottomAnchor, constant: 48, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
         autolayoutHelper.attatchScalably(anchor: usernameTF.centerXAnchor, to: view.centerXAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
@@ -73,9 +89,7 @@ class SearchVC: UIViewController {
     private func configureGetFollowersButton(){
         view.addSubview(getFollowersButton)
         
-//        let dummyLine = UIView(frame: CGRect(x: 0, y: view.bounds.midY, width: view.bounds.width, height: 2))
-//        dummyLine.backgroundColor = .systemRed
-//        view.addSubview(dummyLine)
+        getFollowersButton.addTarget(self, action: #selector(pushFollowesListVC), for: .touchUpInside)
         
         getFollowersButton.translatesAutoresizingMaskIntoConstraints = false
         autolayoutHelper.attatchScalably(anchor: getFollowersButton.bottomAnchor, to: view.safeAreaLayoutGuide.bottomAnchor, constant: -50, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
@@ -89,4 +103,12 @@ class SearchVC: UIViewController {
         autolayoutHelper.addViewSizeConstrainsGuidedByHeight(to: getFollowersButton, with: CGSize(width: 400, height: 50), designOrientationIsPortrait: false, for: [.CompactCompact,.RegularCompact])
     }
 
+}
+
+extension SearchVC : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        pushFollowesListVC()
+        return true
+    }
 }

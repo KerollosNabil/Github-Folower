@@ -18,7 +18,7 @@ class RoundedButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(backgroungColor:UIColor, title:String) {
+    init(backgroungColor:UIColor, title:String?) {
         super.init(frame: .zero)
         self.backgroundColor = backgroungColor
         self.setTitle(title, for: .normal)

@@ -49,7 +49,6 @@ class AutolayoutHelper {
     }
     
     func attatchScalably<T:NSLayoutXAxisAnchor> (anchor:NSLayoutAnchor<T>, to:NSLayoutAnchor<T>, constant:CGFloat, for sizeClasses:Set< DeviceSizeClassManager.DeviceSizeClass>, designOrientationIsPortrait:Bool){
-        print(designCalculator.widthFraction(isPortrait: designOrientationIsPortrait))
         let anchorConstraint = anchor.constraint(equalTo: to, constant: constant * designCalculator.widthFraction(isPortrait: designOrientationIsPortrait))
         deviceSizeClassManager.addConstraints(constraints: [anchorConstraint], for: sizeClasses)
     }
