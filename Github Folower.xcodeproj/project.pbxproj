@@ -19,15 +19,17 @@
 		0453CC8D25502CCC00BA4998 /* Label+ fitTextToBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453CC8C25502CCC00BA4998 /* Label+ fitTextToBounds.swift */; };
 		0453CC9225502D1D00BA4998 /* uibutton + fitTextToBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453CC9125502D1D00BA4998 /* uibutton + fitTextToBounds.swift */; };
 		0453CC9725502D6A00BA4998 /* UIViewController+present.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453CC9625502D6A00BA4998 /* UIViewController+present.swift */; };
-		0454896B253C6BCA00F29E81 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454896A253C6BCA00F29E81 /* TitleLabel.swift */; };
+		0453CCAC2553FEF500BA4998 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453CCAB2553FEF500BA4998 /* Follower.swift */; };
 		04548970253C75AC00F29E81 /* bodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454896F253C75AC00F29E81 /* bodyLabel.swift */; };
 		04548978253C884900F29E81 /* ButtonsStackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548977253C884900F29E81 /* ButtonsStackVC.swift */; };
 		0498826C253DD2C100BA2130 /* AlertBodyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498826B253DD2C100BA2130 /* AlertBodyVC.swift */; };
-		049D218325391B6300902747 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D218225391B6300902747 /* String+Ext.swift */; };
 		049D218825392E9300902747 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D218725392E9300902747 /* FollowerListVC.swift */; };
-		04F13997252E0E2500332934 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F13996252E0E2500332934 /* FavoriteVC.swift */; };
+		04EF04F2255402B100F168AB /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF04F1255402B100F168AB /* String+Ext.swift */; };
+		04EF04F72554037700F168AB /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF04F62554037700F168AB /* RoundedButton.swift */; };
+		04EF04FC2554045E00F168AB /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF04FB2554045E00F168AB /* FavoriteVC.swift */; };
+		04EF05012554047900F168AB /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF05002554047900F168AB /* TitleLabel.swift */; };
+		04EF050E255406F500F168AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF050D255406F500F168AB /* User.swift */; };
 		04F1399D252E0ED900332934 /* ViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1399C252E0ED900332934 /* ViewController+Navigation.swift */; };
-		04F139A9252E755B00332934 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F139A8252E755B00332934 /* RoundedButton.swift */; };
 		04F139AE252E7D2600332934 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F139AD252E7D2600332934 /* RoundedTextField.swift */; };
 		04F139C3252FE0C600332934 /* AutolayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F139C2252FE0C600332934 /* AutolayoutHelper.swift */; };
 		04F139CB253021BF00332934 /* ArrayOfconstraints+activation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F139CA253021BF00332934 /* ArrayOfconstraints+activation.swift */; };
@@ -58,7 +60,6 @@
 		04534010252D4CFE003A9DA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		04534017252D4D02003A9DA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0453401A252D4D02003A9DA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0453401C252D4D02003A9DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04534021252D4D03003A9DA6 /* Github FolowerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Github FolowerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04534025252D4D03003A9DA6 /* Github_FolowerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Github_FolowerTests.swift; sourceTree = "<group>"; };
 		04534027252D4D03003A9DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,15 +72,17 @@
 		0453CC8C25502CCC00BA4998 /* Label+ fitTextToBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Label+ fitTextToBounds.swift"; path = "Github Folower/custom alert/extentions/Label+ fitTextToBounds.swift"; sourceTree = SOURCE_ROOT; };
 		0453CC9125502D1D00BA4998 /* uibutton + fitTextToBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "uibutton + fitTextToBounds.swift"; path = "Github Folower/custom alert/extentions/uibutton + fitTextToBounds.swift"; sourceTree = SOURCE_ROOT; };
 		0453CC9625502D6A00BA4998 /* UIViewController+present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+present.swift"; path = "Github Folower/extentions/UIViewController+present.swift"; sourceTree = SOURCE_ROOT; };
-		0454896A253C6BCA00F29E81 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = SOURCE_ROOT; };
+		0453CCAB2553FEF500BA4998 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		0454896F253C75AC00F29E81 /* bodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bodyLabel.swift; sourceTree = "<group>"; };
 		04548977253C884900F29E81 /* ButtonsStackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStackVC.swift; sourceTree = "<group>"; };
 		0498826B253DD2C100BA2130 /* AlertBodyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBodyVC.swift; sourceTree = "<group>"; };
-		049D218225391B6300902747 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Ext.swift"; path = "Github Folower/String+Ext.swift"; sourceTree = SOURCE_ROOT; };
 		049D218725392E9300902747 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
-		04F13996252E0E2500332934 /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = SOURCE_ROOT; };
+		04EF04F1255402B100F168AB /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		04EF04F62554037700F168AB /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		04EF04FB2554045E00F168AB /* FavoriteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
+		04EF05002554047900F168AB /* TitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		04EF050D255406F500F168AB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		04F1399C252E0ED900332934 /* ViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Navigation.swift"; sourceTree = "<group>"; };
-		04F139A8252E755B00332934 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoundedButton.swift; path = "Github Folower/RoundedButton.swift"; sourceTree = SOURCE_ROOT; };
 		04F139AD252E7D2600332934 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		04F139C2252FE0C600332934 /* AutolayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutHelper.swift; sourceTree = "<group>"; };
 		04F139CA253021BF00332934 /* ArrayOfconstraints+activation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrayOfconstraints+activation.swift"; sourceTree = "<group>"; };
@@ -137,8 +140,9 @@
 			children = (
 				0453CCA125508AE600BA4998 /* custom alert */,
 				04548969253C6A1E00F29E81 /* support files */,
-				04F139A7252E725400332934 /* views */,
 				04F1399B252E0E6500332934 /* extentions */,
+				04F139A7252E725400332934 /* views */,
+				0453CCAA2553FEA800BA4998 /* models */,
 				0453404F252E0D23003A9DA6 /* view controllers */,
 			);
 			path = "Github Folower";
@@ -165,7 +169,7 @@
 		0453404F252E0D23003A9DA6 /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
-				04F13996252E0E2500332934 /* FavoriteVC.swift */,
+				04EF04FB2554045E00F168AB /* FavoriteVC.swift */,
 				0453404A252E0CF4003A9DA6 /* SearchVC.swift */,
 				049D218725392E9300902747 /* FollowerListVC.swift */,
 			);
@@ -201,6 +205,15 @@
 			path = extentions;
 			sourceTree = "<group>";
 		};
+		0453CCAA2553FEA800BA4998 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				0453CCAB2553FEF500BA4998 /* Follower.swift */,
+				04EF050D255406F500F168AB /* User.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		04548969253C6A1E00F29E81 /* support files */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,7 +221,6 @@
 				04534010252D4CFE003A9DA6 /* SceneDelegate.swift */,
 				04534017252D4D02003A9DA6 /* Assets.xcassets */,
 				04534019252D4D02003A9DA6 /* LaunchScreen.storyboard */,
-				0453401C252D4D02003A9DA6 /* Info.plist */,
 			);
 			path = "support files";
 			sourceTree = "<group>";
@@ -218,8 +230,8 @@
 			children = (
 				0453CC9625502D6A00BA4998 /* UIViewController+present.swift */,
 				04F139E32535107F00332934 /* DeviceTraitManager.swift */,
-				049D218225391B6300902747 /* String+Ext.swift */,
 				04F139D82535055E00332934 /* Devices.swift */,
+				04EF04F1255402B100F168AB /* String+Ext.swift */,
 				04F139C2252FE0C600332934 /* AutolayoutHelper.swift */,
 				04F1399C252E0ED900332934 /* ViewController+Navigation.swift */,
 				04F139CA253021BF00332934 /* ArrayOfconstraints+activation.swift */,
@@ -230,9 +242,9 @@
 		04F139A7252E725400332934 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				0454896A253C6BCA00F29E81 /* TitleLabel.swift */,
+				04EF05002554047900F168AB /* TitleLabel.swift */,
 				0454896F253C75AC00F29E81 /* bodyLabel.swift */,
-				04F139A8252E755B00332934 /* RoundedButton.swift */,
+				04EF04F62554037700F168AB /* RoundedButton.swift */,
 				04F139AD252E7D2600332934 /* RoundedTextField.swift */,
 			);
 			path = views;
@@ -368,24 +380,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				04548970253C75AC00F29E81 /* bodyLabel.swift in Sources */,
-				04F13997252E0E2500332934 /* FavoriteVC.swift in Sources */,
 				04548978253C884900F29E81 /* ButtonsStackVC.swift in Sources */,
 				0453CC8325502BBB00BA4998 /* AlertVC.swift in Sources */,
 				049D218825392E9300902747 /* FollowerListVC.swift in Sources */,
-				04F139A9252E755B00332934 /* RoundedButton.swift in Sources */,
+				04EF04F72554037700F168AB /* RoundedButton.swift in Sources */,
 				0453404B252E0CF4003A9DA6 /* SearchVC.swift in Sources */,
+				04EF05012554047900F168AB /* TitleLabel.swift in Sources */,
+				04EF04F2255402B100F168AB /* String+Ext.swift in Sources */,
 				04F1399D252E0ED900332934 /* ViewController+Navigation.swift in Sources */,
 				04F139CB253021BF00332934 /* ArrayOfconstraints+activation.swift in Sources */,
 				0453CC9725502D6A00BA4998 /* UIViewController+present.swift in Sources */,
 				04F139E42535107F00332934 /* DeviceTraitManager.swift in Sources */,
-				049D218325391B6300902747 /* String+Ext.swift in Sources */,
 				04F139AE252E7D2600332934 /* RoundedTextField.swift in Sources */,
 				0453CC8D25502CCC00BA4998 /* Label+ fitTextToBounds.swift in Sources */,
 				0453400F252D4CFE003A9DA6 /* AppDelegate.swift in Sources */,
 				04F139D92535055F00332934 /* Devices.swift in Sources */,
-				0454896B253C6BCA00F29E81 /* TitleLabel.swift in Sources */,
 				04F139C3252FE0C600332934 /* AutolayoutHelper.swift in Sources */,
 				04534011252D4CFE003A9DA6 /* SceneDelegate.swift in Sources */,
+				04EF04FC2554045E00F168AB /* FavoriteVC.swift in Sources */,
+				0453CCAC2553FEF500BA4998 /* Follower.swift in Sources */,
+				04EF050E255406F500F168AB /* User.swift in Sources */,
 				0453CC8825502C7B00BA4998 /* UIFont+BestFittingFont.swift in Sources */,
 				0453CC9225502D1D00BA4998 /* uibutton + fitTextToBounds.swift in Sources */,
 				0498826C253DD2C100BA2130 /* AlertBodyVC.swift in Sources */,
