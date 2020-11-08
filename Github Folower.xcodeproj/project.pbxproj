@@ -29,6 +29,7 @@
 		04EF04FC2554045E00F168AB /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF04FB2554045E00F168AB /* FavoriteVC.swift */; };
 		04EF05012554047900F168AB /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF05002554047900F168AB /* TitleLabel.swift */; };
 		04EF050E255406F500F168AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF050D255406F500F168AB /* User.swift */; };
+		04EF052F25581DC800F168AB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF052E25581DC800F168AB /* NetworkManager.swift */; };
 		04F1399D252E0ED900332934 /* ViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1399C252E0ED900332934 /* ViewController+Navigation.swift */; };
 		04F139AE252E7D2600332934 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F139AD252E7D2600332934 /* RoundedTextField.swift */; };
 		04F139C3252FE0C600332934 /* AutolayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F139C2252FE0C600332934 /* AutolayoutHelper.swift */; };
@@ -82,6 +83,7 @@
 		04EF04FB2554045E00F168AB /* FavoriteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
 		04EF05002554047900F168AB /* TitleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		04EF050D255406F500F168AB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		04EF052E25581DC800F168AB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		04F1399C252E0ED900332934 /* ViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Navigation.swift"; sourceTree = "<group>"; };
 		04F139AD252E7D2600332934 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		04F139C2252FE0C600332934 /* AutolayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutHelper.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		0453400D252D4CFE003A9DA6 /* Github Folower */ = {
 			isa = PBXGroup;
 			children = (
+				04EF052D25581D9B00F168AB /* managers */,
 				0453CCA125508AE600BA4998 /* custom alert */,
 				04548969253C6A1E00F29E81 /* support files */,
 				04F1399B252E0E6500332934 /* extentions */,
@@ -223,6 +226,14 @@
 				04534019252D4D02003A9DA6 /* LaunchScreen.storyboard */,
 			);
 			path = "support files";
+			sourceTree = "<group>";
+		};
+		04EF052D25581D9B00F168AB /* managers */ = {
+			isa = PBXGroup;
+			children = (
+				04EF052E25581DC800F168AB /* NetworkManager.swift */,
+			);
+			path = managers;
 			sourceTree = "<group>";
 		};
 		04F1399B252E0E6500332934 /* extentions */ = {
@@ -401,6 +412,7 @@
 				0453CCAC2553FEF500BA4998 /* Follower.swift in Sources */,
 				04EF050E255406F500F168AB /* User.swift in Sources */,
 				0453CC8825502C7B00BA4998 /* UIFont+BestFittingFont.swift in Sources */,
+				04EF052F25581DC800F168AB /* NetworkManager.swift in Sources */,
 				0453CC9225502D1D00BA4998 /* uibutton + fitTextToBounds.swift in Sources */,
 				0498826C253DD2C100BA2130 /* AlertBodyVC.swift in Sources */,
 			);

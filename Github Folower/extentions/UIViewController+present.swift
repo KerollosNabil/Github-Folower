@@ -12,11 +12,7 @@ extension UIViewController{
         DispatchQueue.main.async {
             let alertVC = AlertVC<TitleLabel, BodyLabel>(title: title, message: message)
             let button = RoundedButton(backgroungColor: .systemPink, title: buttontitle)
-            let button2 = UIButton()
-            button2.backgroundColor = .red
-            button2.layer.cornerRadius = 12
             alertVC.addButton(button: button, action: nil, target: nil)
-            alertVC.addButton(button: button2, action: nil, target: nil)
             alertVC.modalPresentationStyle = .overFullScreen
             alertVC.modalTransitionStyle = .crossDissolve
             alertVC.backgroundColor = .black
