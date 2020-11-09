@@ -17,11 +17,17 @@ class TitleLabel: UILabel {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    init(textAlignment:NSTextAlignment, fontSize:CGFloat) {
+    
+    init(textAlignment:NSTextAlignment) {
         super.init(frame: .zero)
         self.textAlignment = textAlignment
-        self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
+        //self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
         configure()
+    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        fitText(maxLines: 1)
+
     }
     private func configure(){
         textColor = .label

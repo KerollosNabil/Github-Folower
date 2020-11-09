@@ -140,7 +140,6 @@ class AlertBodyVC<AlertTitleLabel, AlertMessageLabel>: UIViewController where Al
     }
     
     private func updateLabelsFont(){
-        titleLabel.fitText(maxLines: 1)
         
         if adjustBodyFontToFit{ messageLabel.fitTextToBounds()}
         

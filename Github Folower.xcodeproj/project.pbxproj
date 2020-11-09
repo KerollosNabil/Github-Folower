@@ -22,6 +22,8 @@
 		0453CCAC2553FEF500BA4998 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453CCAB2553FEF500BA4998 /* Follower.swift */; };
 		04548970253C75AC00F29E81 /* bodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454896F253C75AC00F29E81 /* bodyLabel.swift */; };
 		04548978253C884900F29E81 /* ButtonsStackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548977253C884900F29E81 /* ButtonsStackVC.swift */; };
+		0457794F25594CCA00042CFC /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457794E25594CC900042CFC /* FollowerCell.swift */; };
+		045779542559AE0100042CFC /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045779532559AE0100042CFC /* AvatarImageView.swift */; };
 		0498826C253DD2C100BA2130 /* AlertBodyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498826B253DD2C100BA2130 /* AlertBodyVC.swift */; };
 		049D218825392E9300902747 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D218725392E9300902747 /* FollowerListVC.swift */; };
 		04EF04F2255402B100F168AB /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF04F1255402B100F168AB /* String+Ext.swift */; };
@@ -77,6 +79,8 @@
 		0453CCAB2553FEF500BA4998 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		0454896F253C75AC00F29E81 /* bodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bodyLabel.swift; sourceTree = "<group>"; };
 		04548977253C884900F29E81 /* ButtonsStackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStackVC.swift; sourceTree = "<group>"; };
+		0457794E25594CC900042CFC /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
+		045779532559AE0100042CFC /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		0498826B253DD2C100BA2130 /* AlertBodyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBodyVC.swift; sourceTree = "<group>"; };
 		049D218725392E9300902747 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
 		04EF04F1255402B100F168AB /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -142,10 +146,10 @@
 		0453400D252D4CFE003A9DA6 /* Github Folower */ = {
 			isa = PBXGroup;
 			children = (
+				04548969253C6A1E00F29E81 /* support files */,
 				04EF053625583C6000F168AB /* Utilities */,
 				04EF052D25581D9B00F168AB /* Managers */,
 				0453CCA125508AE600BA4998 /* custom alert */,
-				04548969253C6A1E00F29E81 /* support files */,
 				04F1399B252E0E6500332934 /* extentions */,
 				04F139A7252E725400332934 /* views */,
 				0453CCAA2553FEA800BA4998 /* models */,
@@ -231,6 +235,14 @@
 			path = "support files";
 			sourceTree = "<group>";
 		};
+		0457794D25594C7800042CFC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0457794E25594CC900042CFC /* FollowerCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		04EF052D25581D9B00F168AB /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,10 +276,12 @@
 		04F139A7252E725400332934 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				0457794D25594C7800042CFC /* Cells */,
 				04EF05002554047900F168AB /* TitleLabel.swift */,
 				0454896F253C75AC00F29E81 /* bodyLabel.swift */,
 				04EF04F62554037700F168AB /* RoundedButton.swift */,
 				04F139AD252E7D2600332934 /* RoundedTextField.swift */,
+				045779532559AE0100042CFC /* AvatarImageView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -403,6 +417,7 @@
 			files = (
 				04548970253C75AC00F29E81 /* bodyLabel.swift in Sources */,
 				04548978253C884900F29E81 /* ButtonsStackVC.swift in Sources */,
+				0457794F25594CCA00042CFC /* FollowerCell.swift in Sources */,
 				0453CC8325502BBB00BA4998 /* AlertVC.swift in Sources */,
 				049D218825392E9300902747 /* FollowerListVC.swift in Sources */,
 				04EF04F72554037700F168AB /* RoundedButton.swift in Sources */,
@@ -413,6 +428,7 @@
 				04F1399D252E0ED900332934 /* ViewController+Navigation.swift in Sources */,
 				04F139CB253021BF00332934 /* ArrayOfconstraints+activation.swift in Sources */,
 				0453CC9725502D6A00BA4998 /* UIViewController+present.swift in Sources */,
+				045779542559AE0100042CFC /* AvatarImageView.swift in Sources */,
 				04F139E42535107F00332934 /* DeviceTraitManager.swift in Sources */,
 				04F139AE252E7D2600332934 /* RoundedTextField.swift in Sources */,
 				0453CC8D25502CCC00BA4998 /* Label+ fitTextToBounds.swift in Sources */,
