@@ -14,6 +14,7 @@ extension UIButton {
     func fitText(maxLines: UInt) {
         guard let titleLabel = titleLabel, let text = titleLabel.text, let font = titleLabel.font else { return }
         titleLabel.numberOfLines = 0
+        print(bounds)
         self.titleLabel?.font = UIFont.fontFittingText(text, in: bounds.size, fontDescriptor: font.fontDescriptor, option: .preferredLineCount(maxLines))
         
         

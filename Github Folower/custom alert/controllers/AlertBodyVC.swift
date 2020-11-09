@@ -106,7 +106,7 @@ class AlertBodyVC<AlertTitleLabel, AlertMessageLabel>: UIViewController where Al
         viewsStack.addArrangedSubview(buttonsStack.view)
         buttonsStack.didMove(toParent: self)
         buttonsStack.view.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: buttonsHeightFraction).isActive = true
-        
+        buttonsStack.fitTextToBound = true
     }
     
     private func setupAlertProperties(){
@@ -134,9 +134,13 @@ class AlertBodyVC<AlertTitleLabel, AlertMessageLabel>: UIViewController where Al
         updateLabelsFont()
     }
     
+    override func systemLayoutFittingSizeDidChange(forChildContentContainer container: UIContentContainer) {
+        super.systemLayoutFittingSizeDidChange(forChildContentContainer: container)
+        updateLabelsFont()
+    }
+    
     private func updateLabelsFont(){
         titleLabel.fitText(maxLines: 1)
-        buttonsStack.updateButtonsFont()
         
         if adjustBodyFontToFit{ messageLabel.fitTextToBounds()}
         
