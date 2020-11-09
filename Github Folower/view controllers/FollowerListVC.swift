@@ -17,13 +17,13 @@ class FollowerListVC: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         
-        NetworkManager.shared.getFollowers(for: userName, page: 1) { (follwers, errorMessage) in
-            guard let follwers = follwers else{
-                self.presentGFAlertOnMainThread(title: "bad stuff haperns", message: errorMessage!.rawValue, buttontitle: "Ok")
-                return
+        NetworkManager.shared.getFollowers(for: userName, page: 1) { result in
+            
+            
+            switch result{
+            case .failure(let error): self.presentGFAlertOnMainThread(title: "bad stuff haperns", message: error.rawValue, buttontitle: "Ok")
+            case .success(let follwers):print(follwers)
             }
-            print("Follwers number = \(follwers.count)")
-            print(follwers)
         }
     }
     override func viewWillAppear(_ animated: Bool) {
