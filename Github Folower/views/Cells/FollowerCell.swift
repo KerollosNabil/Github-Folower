@@ -13,7 +13,7 @@ class FollowerCell: UICollectionViewCell {
     let avatarImageView = AvatarImageView(frame: .zero)
     let usernameLabel = TitleLabel(textAlignment: .center)
     var padding:CGFloat = 8
-    var labelToImageRatio:CGFloat = 0.1
+    var labelToImageRatio:CGFloat = 0.20
     
     
     override init(frame: CGRect) {
@@ -43,6 +43,7 @@ class FollowerCell: UICollectionViewCell {
     func setupAvatarImage(){
         addSubview(avatarImageView)
         
+        avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
             avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
@@ -54,6 +55,7 @@ class FollowerCell: UICollectionViewCell {
     func setupUsernameLabel(){
         addSubview(usernameLabel)
         
+        usernameLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             usernameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: padding*3/2),
             usernameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),

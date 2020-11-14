@@ -21,11 +21,12 @@ class TitleLabel: UILabel {
     init(textAlignment:NSTextAlignment) {
         super.init(frame: .zero)
         self.textAlignment = textAlignment
-        //self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
+        self.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         configure()
     }
     override func layoutSubviews() {
         super.layoutSubviews()
+        print(bounds)
         fitText(maxLines: 1)
 
     }

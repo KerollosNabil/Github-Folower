@@ -55,54 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B292234C-4728-44DE-A394-6016453AF47B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Github Folower/custom alert/extentions/UIFont+BestFittingFont.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "fontFittingText(_:in:fontDescriptor:option:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B292234C-4728-44DE-A394-6016453AF47B - 97bf5097944b4941"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static (extension in Github_Folower):__C.UIFont.fontFittingText(_: Swift.String, in: __C.CGSize, fontDescriptor: __C.UIFontDescriptor, option: Github_Folower.TextSizingOption) -&gt; Swift.Optional&lt;__C.UIFont&gt;"
-                  moduleName = "Github Folower"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Desktop/projects/Github%20Folower/Github%20Folower/custom%20alert/extentions/UIFont+BestFittingFont.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "764">
-               </Location>
-               <Location
-                  uuid = "B292234C-4728-44DE-A394-6016453AF47B - b8f2b882b9e40c0e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int) -&gt; Swift.Bool in static (extension in Github_Folower):__C.UIFont.fontFittingText(_: Swift.String, in: __C.CGSize, fontDescriptor: __C.UIFontDescriptor, option: Github_Folower.TextSizingOption) -&gt; Swift.Optional&lt;__C.UIFont&gt;"
-                  moduleName = "Github Folower"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Desktop/projects/Github%20Folower/Github%20Folower/custom%20alert/extentions/UIFont+BestFittingFont.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "440">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "7C21E954-F33F-4C76-A14E-E79172E0A7C2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -145,6 +97,22 @@
             startingLineNumber = "50"
             endingLineNumber = "50"
             landmarkName = "systemLayoutFittingSizeDidChange(forChildContentContainer:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B4927286-B31B-446C-A10C-B68389B0CB10"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Github Folower/views/TitleLabel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "layoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

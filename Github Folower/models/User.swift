@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User:Codable {
+struct User:Codable, Hashable {
     
     var login:String
     var avatarUrl:String
