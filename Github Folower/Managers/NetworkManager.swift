@@ -13,6 +13,7 @@ class NetworkManager {
     private let scheme = "https"
     private let host = "api.github.com"
     var numberOfFollowersPerPage = 100
+    let cache = NSCache<NSString, UIImage>()
     
     
     private init (){
