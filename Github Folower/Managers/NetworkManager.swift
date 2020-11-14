@@ -5,7 +5,7 @@
 //  Created by MAC on 11/8/20.
 //
 
-import Foundation
+import UIKit
 
 class NetworkManager {
     static let shared = NetworkManager()
@@ -54,4 +54,6 @@ class NetworkManager {
         }
         task.resume()
     }
+    
+    
 }
