@@ -22,7 +22,6 @@ class FollowerListVC: UIViewController {
         super.viewDidLoad()
         configureViewController()
         configureCollectionView()
-        
         getFollowers()
         configureDataSource()
     }
@@ -31,32 +30,14 @@ class FollowerListVC: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    private func configureViewController(){
-        view.backgroundColor = .systemBackground
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-
-    
-    private func createGFFollowersCollectionView()->UICollectionView{
-        let cellAcpectRatio:CGFloat = 1.1
-        let constant:CGFloat = 12
-        let desplayMode:CollectionDisplay = .grid(columns: 3, aspectRatio: cellAcpectRatio, constant: constant)
-        let layout = GFFlowLayout(display: desplayMode, containerWidth: view.bounds.width, minimumLineSpacing: 12, minimumInteritemSpacing: 10)
-        return UICollectionView(frame: .zero, collectionViewLayout: layout)
-    }
-    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         self.reloadCollectionViewLayout(self.view.bounds.size.width)
     }
-
-    private func reloadCollectionViewLayout(_ width: CGFloat) {
-        if let flowLayout = collectionView.collectionViewLayout as? GFFlowLayout{
-            flowLayout.containerWidth = width
-            flowLayout.display = self.view.traitCollection.verticalSizeClass == .regular ? CollectionDisplay.grid(columns: 3, aspectRatio: 1.1, constant: 12) : CollectionDisplay.grid(columns: 5, aspectRatio: 1.1, constant: 12)
-        }
-
+    
+    private func configureViewController(){
+        view.backgroundColor = .systemBackground
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func configureCollectionView(){
@@ -73,8 +54,26 @@ class FollowerListVC: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+    
+    private func createGFFollowersCollectionView()->UICollectionView{
+        let cellAcpectRatio:CGFloat = 1.1
+        let constant:CGFloat = 12
+        let desplayMode:CollectionDisplay = .grid(columns: 3, aspectRatio: cellAcpectRatio, constant: constant)
+        let layout = GFFlowLayout(display: desplayMode, containerWidth: view.bounds.width, minimumLineSpacing: 12, minimumInteritemSpacing: 10)
+        return UICollectionView(frame: .zero, collectionViewLayout: layout)
+    }
+
+    private func reloadCollectionViewLayout(_ width: CGFloat) {
+        if let flowLayout = collectionView.collectionViewLayout as? GFFlowLayout{
+            flowLayout.containerWidth = width
+            flowLayout.display = self.view.traitCollection.verticalSizeClass == .regular ? CollectionDisplay.grid(columns: 3, aspectRatio: 1.1, constant: 12) : CollectionDisplay.grid(columns: 5, aspectRatio: 1.1, constant: 12)
+        }
+
+    }
+    
     private func getFollowers(){
-        NetworkManager.shared.getFollowers(for: userName, page: 1) { result in
+        NetworkManager.shared.getFollowers(for: userName, page: 1) {[weak self] result in
+            guard let self = self else { return }
             switch result{
             case .failure(let error): self.presentGFAlertOnMainThread(title: "bad stuff haperns", message: error.rawValue, buttontitle: "Ok")
             case .success(let followers):
