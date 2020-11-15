@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FollowerListVC: UIViewController {
+class FollowerListVC: DataLoadingViewController {
     
     enum Section{
         case main
@@ -75,8 +75,10 @@ class FollowerListVC: UIViewController {
     }
     
     private func getFollowers(page:Int){
+        showLoadingView()
         NetworkManager.shared.getFollowers(for: userName, page: page) {[weak self] result in
             guard let self = self else { return }
+            self.dismissLoadingView()
             switch result{
             case .failure(let error): self.presentGFAlertOnMainThread(title: "bad stuff haperns", message: error.rawValue, buttontitle: "Ok")
             case .success(let followers):
