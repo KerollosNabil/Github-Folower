@@ -26,7 +26,6 @@ class TitleLabel: UILabel {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        print(bounds)
         fitText(maxLines: 1)
 
     }

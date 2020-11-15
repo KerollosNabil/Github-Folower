@@ -15,13 +15,10 @@ class NetworkManager {
     var numberOfFollowersPerPage = 100
     let cache = NSCache<NSString, UIImage>()
     
-    
     private init (){
         urlComponent.scheme = scheme
         urlComponent.host = host
     }
-    
-    
     
     func getFollowers(for username:String, page:Int, completed: @escaping(Result<[Follower], GFError>)->Void) {
         urlComponent.path = "/users/\(username)/followers"

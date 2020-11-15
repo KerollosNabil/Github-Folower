@@ -44,20 +44,7 @@ class ButtonsStackVC:UIViewController  {
         parent?.parent?.dismiss(animated: true)
     }
     
-//    override func systemLayoutFittingSizeDidChange(forChildContentContainer container: UIContentContainer) {
-//        super.systemLayoutFittingSizeDidChange(forChildContentContainer: container)
-//        if fitTextToBound {
-//            updateButtonsFont()
-//        }
-//    }
-//    private func updateButtonsFont(){
-//        for view in hStack.arrangedSubviews {
-//            if let button = view as? UIButton{
-//                button.fitText(maxLines: 1)
-//                
-//            }
-//        }
-//    }
+
     
     func addButton<Button:UIButton>(button:Button, action:Selector?, target:Any?) {
         if let actionn = action {button.addTarget(target, action: actionn, for: .touchUpInside)}

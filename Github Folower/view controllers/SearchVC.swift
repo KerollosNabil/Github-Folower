@@ -17,7 +17,6 @@ class SearchVC: UIViewController {
     var autolayoutHelper : AutolayoutHelper! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(view.bounds)
         autolayoutHelper = AutolayoutHelper(designViewSizePortraitMode: CGSize(width: 414, height: 896), designView: self.view)
         view.backgroundColor = .systemBackground
         configureLogoImageView()

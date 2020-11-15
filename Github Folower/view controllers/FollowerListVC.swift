@@ -17,12 +17,14 @@ class FollowerListVC: UIViewController {
     var userName:String!
     var collectionView:UICollectionView!
     var dataSorce:UICollectionViewDiffableDataSource<Section, Follower>!
+    private var page = 1
+    private var hasMoreFollowers = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
         configureCollectionView()
-        getFollowers()
+        getFollowers(page: page)
         configureDataSource()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +45,7 @@ class FollowerListVC: UIViewController {
     private func configureCollectionView(){
         collectionView = createGFFollowersCollectionView()
         view.addSubview(collectionView)
+        collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
         
@@ -71,13 +74,14 @@ class FollowerListVC: UIViewController {
 
     }
     
-    private func getFollowers(){
-        NetworkManager.shared.getFollowers(for: userName, page: 1) {[weak self] result in
+    private func getFollowers(page:Int){
+        NetworkManager.shared.getFollowers(for: userName, page: page) {[weak self] result in
             guard let self = self else { return }
             switch result{
             case .failure(let error): self.presentGFAlertOnMainThread(title: "bad stuff haperns", message: error.rawValue, buttontitle: "Ok")
             case .success(let followers):
-                self.followers = followers
+                if followers.count < 100 {self.hasMoreFollowers = false}
+                self.followers.append(contentsOf: followers)
                 self.updateData()
             }
         }
@@ -101,4 +105,16 @@ class FollowerListVC: UIViewController {
         }
     }
 
+}
+extension FollowerListVC:UICollectionViewDelegate{
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let scrollViewHeight = scrollView.frame.size.height
+        if offsetY > contentHeight - scrollViewHeight - scrollViewHeight*0.5{
+            guard hasMoreFollowers else {return}
+            page += 1
+            self.getFollowers(page: page)
+        }
+    }
 }
