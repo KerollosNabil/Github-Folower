@@ -22,7 +22,7 @@ class AutolayoutHelper {
     
     init(designViewSizePortraitMode:CGSize, designView:UIView) {
         
-        self.designCalculator = DesignSizeCalculator(designViewSizePortraitMode: designViewSizePortraitMode, curentView: designView)
+        self.designCalculator = DesignSizeCalculator(designViewSizePortraitMode: designViewSizePortraitMode)
         self.designView = designView
     }
     
@@ -53,7 +53,6 @@ class AutolayoutHelper {
         deviceSizeClassManager.addConstraints(constraints: [anchorConstraint], for: sizeClasses)
     }
     func attatchScalably<T:NSLayoutYAxisAnchor> (anchor:NSLayoutAnchor<T>, to:NSLayoutAnchor<T>, constant:CGFloat, for sizeClasses:Set< DeviceSizeClassManager.DeviceSizeClass>, designOrientationIsPortrait:Bool){
-        
         let anchorConstraint = anchor.constraint(equalTo: to, constant: constant * designCalculator.heightFraction(isPortrait: designOrientationIsPortrait))
         deviceSizeClassManager.addConstraints(constraints: [anchorConstraint], for: sizeClasses)
     }

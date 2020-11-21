@@ -13,7 +13,7 @@ extension UILabel {
     /// Uses the pre-set font to dynamically determine the proper sizing
     func fitText(maxLines: UInt) {
         guard let text = text, let font = font else { return }
-        numberOfLines = 0
+        numberOfLines = Int(maxLines)
         self.font = UIFont.fontFittingText(text, in: bounds.size, fontDescriptor: font.fontDescriptor, option: .preferredLineCount(maxLines))
     }
         

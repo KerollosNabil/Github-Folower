@@ -91,6 +91,7 @@ class AlertBodyVC<AlertTitleLabel, AlertMessageLabel>: UIViewController where Al
         
         titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         titleLabel.adjustsFontForContentSizeCategory = true
+        titleLabel.numberOfLines = 1
         titleLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: titleHeightFraction).isActive = true
     }
     private func addMessageLabel() {

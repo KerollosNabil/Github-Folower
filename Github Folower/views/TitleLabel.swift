@@ -26,7 +26,12 @@ class TitleLabel: UILabel {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        fitText(maxLines: 1)
+        if numberOfLines > 0 {
+            fitText(maxLines: UInt(numberOfLines))
+        }else{
+            fitTextToBounds()
+        }
+        
 
     }
     private func configure(){

@@ -34,11 +34,13 @@ class DeviceSizeClassManager{
         
         let widthSizeClassValue = UIScreen.main.traitCollection.horizontalSizeClass.rawValue
         let heightSizeClassValue = UIScreen.main.traitCollection.verticalSizeClass.rawValue
-        let orientationValue = UIDevice.current.orientation.isPortrait ? 1 : 0
+        let orientationValue = (UIScreen.main.bounds.size.width < UIScreen.main.bounds.size.height) ? 1 : 0
         let DeviceSizeClassRawValue = createDeviceSizeClassRawValue(orientationValue: orientationValue, widthSizeClassValue: widthSizeClassValue, heightSizeClassValue: heightSizeClassValue)
         if let deviceSizeClass = DeviceSizeClass(rawValue: DeviceSizeClassRawValue){
             deactivateAllconstraints()
-            sizeClassConstraints[deviceSizeClass]!.activate()
+            if let constraintsForSizeClass = sizeClassConstraints[deviceSizeClass]{
+                constraintsForSizeClass.activate()
+            }
         }
         
     }

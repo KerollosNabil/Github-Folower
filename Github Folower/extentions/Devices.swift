@@ -34,10 +34,11 @@ class DesignSizeCalculator{
         return orientationIsPortrait ? designViewSizePortrait : designViewSizeLandscape
     }
     
-    init(designViewSizePortraitMode:CGSize, curentView:UIView) {
+    init(designViewSizePortraitMode:CGSize) {
         designViewSizePortrait = designViewSizePortraitMode
+        let curentScreenSize = UIScreen.main.bounds
         designViewSizeLandscape = CGSize(width: designViewSizePortrait.height, height: designViewSizePortrait.width)
-        curentViewSizePortrait = CGSize(width: min(curentView.bounds.width, curentView.bounds.height) , height: max(curentView.bounds.width, curentView.bounds.height))
+        curentViewSizePortrait = CGSize(width: min(curentScreenSize.width, curentScreenSize.height) , height: max(curentScreenSize.width, curentScreenSize.height))
         curentViewSizeLandscape = CGSize(width: curentViewSizePortrait.height, height: curentViewSizePortrait.width)
         
         

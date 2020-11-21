@@ -84,6 +84,12 @@ class FollowerListVC: DataLoadingViewController {
             case .success(let followers):
                 if followers.count < 100 {self.hasMoreFollowers = false}
                 self.followers.append(contentsOf: followers)
+                if self.followers.isEmpty {
+                    DispatchQueue.main.async {
+                        self.showEmptyStateView(with: "This user does not have any followers, Go follow him 😀")
+                    }
+                    return
+                }
                 self.updateData()
             }
         }
