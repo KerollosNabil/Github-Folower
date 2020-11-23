@@ -16,7 +16,7 @@ struct User:Codable, Hashable {
     var location:String?
     var publicRepos:Int
     var publicGists:Int
-    var htmlUrl:Int
+    var htmlUrl:String
     var followers:Int
     var following:Int
     var createdAt:String

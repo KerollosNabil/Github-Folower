@@ -27,6 +27,12 @@
 		045D4A67255D5ECD00A1F14B /* GFFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D4A66255D5ECD00A1F14B /* GFFlowLayout.swift */; };
 		046206532561860D005129F3 /* DataLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046206522561860D005129F3 /* DataLoadingViewController.swift */; };
 		0462065825619C6B005129F3 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462065725619C6B005129F3 /* EmptyStateView.swift */; };
+		047684D525694E360048CC71 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047684D425694E360048CC71 /* UserInfoVC.swift */; };
+		047684DA256B0B1B0048CC71 /* SecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047684D9256B0B1B0048CC71 /* SecondaryTitleLabel.swift */; };
+		047684E1256B0E6B0048CC71 /* UserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047684E0256B0E6B0048CC71 /* UserInfoHeaderVC.swift */; };
+		047684E9256BD6D60048CC71 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047684E8256BD6D60048CC71 /* Constants.swift */; };
+		047684F2256C5EC90048CC71 /* ViewControllerWithAutoLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047684F1256C5EC90048CC71 /* ViewControllerWithAutoLayoutHelper.swift */; };
+		047684FA256C6A730048CC71 /* UIViewWithAutoLayoutHellper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047684F9256C6A730048CC71 /* UIViewWithAutoLayoutHellper.swift */; };
 		0498826C253DD2C100BA2130 /* AlertBodyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498826B253DD2C100BA2130 /* AlertBodyVC.swift */; };
 		049D218825392E9300902747 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D218725392E9300902747 /* FollowerListVC.swift */; };
 		04EF04F2255402B100F168AB /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF04F1255402B100F168AB /* String+Ext.swift */; };
@@ -87,6 +93,12 @@
 		045D4A66255D5ECD00A1F14B /* GFFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFlowLayout.swift; sourceTree = "<group>"; };
 		046206522561860D005129F3 /* DataLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoadingViewController.swift; sourceTree = "<group>"; };
 		0462065725619C6B005129F3 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		047684D425694E360048CC71 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = SOURCE_ROOT; };
+		047684D9256B0B1B0048CC71 /* SecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		047684E0256B0E6B0048CC71 /* UserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeaderVC.swift; sourceTree = "<group>"; };
+		047684E8256BD6D60048CC71 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		047684F1256C5EC90048CC71 /* ViewControllerWithAutoLayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWithAutoLayoutHelper.swift; sourceTree = "<group>"; };
+		047684F9256C6A730048CC71 /* UIViewWithAutoLayoutHellper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewWithAutoLayoutHellper.swift; sourceTree = "<group>"; };
 		0498826B253DD2C100BA2130 /* AlertBodyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBodyVC.swift; sourceTree = "<group>"; };
 		049D218725392E9300902747 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
 		04EF04F1255402B100F168AB /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -185,10 +197,11 @@
 		0453404F252E0D23003A9DA6 /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
+				047684F0256C5E730048CC71 /* parents */,
+				047684D425694E360048CC71 /* UserInfoVC.swift */,
 				04EF04FB2554045E00F168AB /* FavoriteVC.swift */,
 				0453404A252E0CF4003A9DA6 /* SearchVC.swift */,
 				049D218725392E9300902747 /* FollowerListVC.swift */,
-				046206522561860D005129F3 /* DataLoadingViewController.swift */,
 			);
 			path = "view controllers";
 			sourceTree = "<group>";
@@ -250,6 +263,33 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		047684DE256B0D850048CC71 /* labels */ = {
+			isa = PBXGroup;
+			children = (
+				04EF05002554047900F168AB /* TitleLabel.swift */,
+				0454896F253C75AC00F29E81 /* bodyLabel.swift */,
+				047684D9256B0B1B0048CC71 /* SecondaryTitleLabel.swift */,
+			);
+			path = labels;
+			sourceTree = "<group>";
+		};
+		047684DF256B0E150048CC71 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				047684E0256B0E6B0048CC71 /* UserInfoHeaderVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		047684F0256C5E730048CC71 /* parents */ = {
+			isa = PBXGroup;
+			children = (
+				046206522561860D005129F3 /* DataLoadingViewController.swift */,
+				047684F1256C5EC90048CC71 /* ViewControllerWithAutoLayoutHelper.swift */,
+			);
+			path = parents;
+			sourceTree = "<group>";
+		};
 		04EF052D25581D9B00F168AB /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +304,7 @@
 			children = (
 				04EF053A25583CFE00F168AB /* ErrorMessage.swift */,
 				045D4A66255D5ECD00A1F14B /* GFFlowLayout.swift */,
+				047684E8256BD6D60048CC71 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -284,13 +325,14 @@
 		04F139A7252E725400332934 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				047684DF256B0E150048CC71 /* ViewControllers */,
+				047684DE256B0D850048CC71 /* labels */,
 				0457794D25594C7800042CFC /* Cells */,
-				04EF05002554047900F168AB /* TitleLabel.swift */,
-				0454896F253C75AC00F29E81 /* bodyLabel.swift */,
 				04EF04F62554037700F168AB /* RoundedButton.swift */,
 				04F139AD252E7D2600332934 /* RoundedTextField.swift */,
 				045779532559AE0100042CFC /* AvatarImageView.swift */,
 				0462065725619C6B005129F3 /* EmptyStateView.swift */,
+				047684F9256C6A730048CC71 /* UIViewWithAutoLayoutHellper.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -428,6 +470,7 @@
 				04548978253C884900F29E81 /* ButtonsStackVC.swift in Sources */,
 				0457794F25594CCA00042CFC /* FollowerCell.swift in Sources */,
 				0453CC8325502BBB00BA4998 /* AlertVC.swift in Sources */,
+				047684FA256C6A730048CC71 /* UIViewWithAutoLayoutHellper.swift in Sources */,
 				049D218825392E9300902747 /* FollowerListVC.swift in Sources */,
 				04EF04F72554037700F168AB /* RoundedButton.swift in Sources */,
 				0453404B252E0CF4003A9DA6 /* SearchVC.swift in Sources */,
@@ -439,13 +482,17 @@
 				04F139CB253021BF00332934 /* ArrayOfconstraints+activation.swift in Sources */,
 				0453CC9725502D6A00BA4998 /* UIViewController+present.swift in Sources */,
 				045779542559AE0100042CFC /* AvatarImageView.swift in Sources */,
+				047684D525694E360048CC71 /* UserInfoVC.swift in Sources */,
 				04F139E42535107F00332934 /* DeviceTraitManager.swift in Sources */,
 				04F139AE252E7D2600332934 /* RoundedTextField.swift in Sources */,
+				047684DA256B0B1B0048CC71 /* SecondaryTitleLabel.swift in Sources */,
 				0453CC8D25502CCC00BA4998 /* Label+ fitTextToBounds.swift in Sources */,
 				0453400F252D4CFE003A9DA6 /* AppDelegate.swift in Sources */,
 				04F139D92535055F00332934 /* Devices.swift in Sources */,
 				04F139C3252FE0C600332934 /* AutolayoutHelper.swift in Sources */,
 				04534011252D4CFE003A9DA6 /* SceneDelegate.swift in Sources */,
+				047684E1256B0E6B0048CC71 /* UserInfoHeaderVC.swift in Sources */,
+				047684E9256BD6D60048CC71 /* Constants.swift in Sources */,
 				0462065825619C6B005129F3 /* EmptyStateView.swift in Sources */,
 				04EF04FC2554045E00F168AB /* FavoriteVC.swift in Sources */,
 				0453CCAC2553FEF500BA4998 /* Follower.swift in Sources */,
@@ -453,6 +500,7 @@
 				046206532561860D005129F3 /* DataLoadingViewController.swift in Sources */,
 				0453CC8825502C7B00BA4998 /* UIFont+BestFittingFont.swift in Sources */,
 				04EF052F25581DC800F168AB /* NetworkManager.swift in Sources */,
+				047684F2256C5EC90048CC71 /* ViewControllerWithAutoLayoutHelper.swift in Sources */,
 				0453CC9225502D1D00BA4998 /* uibutton + fitTextToBounds.swift in Sources */,
 				0498826C253DD2C100BA2130 /* AlertBodyVC.swift in Sources */,
 			);

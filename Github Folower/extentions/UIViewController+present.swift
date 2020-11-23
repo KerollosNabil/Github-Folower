@@ -21,4 +21,9 @@ extension UIViewController{
         }
         
     }
+    func add(chiledVC:UIViewController, to containerView:UIView) {
+        addChild(chiledVC)
+        containerView.addSubview(chiledVC.view)
+        chiledVC.view.frame = containerView.bounds
+    }
 }

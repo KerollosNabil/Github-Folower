@@ -39,16 +39,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5A1A3B96-EF49-4AE7-A58D-4402B845675D"
+            uuid = "928D8E80-659C-4A10-919F-ED86C02C7FEB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Github Folower/extentions/AutolayoutHelper.swift"
+            filePath = "Github Folower/Managers/DeviceTraitManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "addViewSizeConstrainsGuidedByWidth(to:with:designOrientationIsPortrait:for:)"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "rotated()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

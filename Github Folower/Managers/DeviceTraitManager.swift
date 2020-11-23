@@ -12,9 +12,6 @@ class DeviceSizeClassManager{
     
     var sizeClassConstraints = [DeviceSizeClassManager.DeviceSizeClass : [NSLayoutConstraint]]()
     
-    init() {
-        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
-    }
     
     func deactivateAllconstraints() {
         for layoutConstraints in sizeClassConstraints.values {
@@ -31,7 +28,6 @@ class DeviceSizeClassManager{
     }
     
     @objc func rotated() {
-        
         let widthSizeClassValue = UIScreen.main.traitCollection.horizontalSizeClass.rawValue
         let heightSizeClassValue = UIScreen.main.traitCollection.verticalSizeClass.rawValue
         let orientationValue = (UIScreen.main.bounds.size.width < UIScreen.main.bounds.size.height) ? 1 : 0

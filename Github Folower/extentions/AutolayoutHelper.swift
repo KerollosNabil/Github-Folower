@@ -13,17 +13,11 @@ class AutolayoutHelper {
     
     var designCalculator:DesignSizeCalculator
     var deviceSizeClassManager = DeviceSizeClassManager()
-    var designView:UIView
     
-    init(designCalculator:DesignSizeCalculator, designView:UIView) {
-        self.designCalculator = designCalculator
-        self.designView = designView
-    }
     
-    init(designViewSizePortraitMode:CGSize, designView:UIView) {
+    init(designViewSizePortraitMode:CGSize) {
         
         self.designCalculator = DesignSizeCalculator(designViewSizePortraitMode: designViewSizePortraitMode)
-        self.designView = designView
     }
     
     func startLayout()  {
@@ -31,18 +25,19 @@ class AutolayoutHelper {
     }
     
     func addViewSizeConstrainsGuidedByWidth(to view:UIView, with designSize:CGSize, designOrientationIsPortrait:Bool, for sizeClasses:Set< DeviceSizeClassManager.DeviceSizeClass>) {
-        let widthRatio = designSize.width / designCalculator.getDesignSize(baseOn: designOrientationIsPortrait).width
+
+        let widthRatio = designCalculator.widthRatio(baseOn: designOrientationIsPortrait)
         let aspectRatio = designSize.height / designSize.width
-        let widthConstraint = view.widthAnchor.constraint(equalTo: designView.widthAnchor, multiplier: widthRatio)
+        let widthConstraint = view.widthAnchor.constraint(equalToConstant: designSize.width*widthRatio)
         let heightConstraint = view.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: aspectRatio)
         
         deviceSizeClassManager.addConstraints(constraints: [widthConstraint,heightConstraint], for: sizeClasses)
         
     }
     func addViewSizeConstrainsGuidedByHeight(to view:UIView, with designSize:CGSize, designOrientationIsPortrait:Bool, for sizeClasses:Set< DeviceSizeClassManager.DeviceSizeClass>) {
-        let heightRatio = designSize.height / designCalculator.getDesignSize(baseOn: designOrientationIsPortrait).height
+        let heightRatio = designCalculator.heightRatio(baseOn: designOrientationIsPortrait)
         let aspectRatio = designSize.width / designSize.height
-        let heightConstraint = view.heightAnchor.constraint(equalTo: designView.heightAnchor, multiplier: heightRatio)
+        let heightConstraint = view.heightAnchor.constraint(equalToConstant: designSize.height*heightRatio)
         let widthConstraint = view.widthAnchor.constraint(equalTo: view.heightAnchor, multiplier: aspectRatio)
         deviceSizeClassManager.addConstraints(constraints: [widthConstraint,heightConstraint], for: sizeClasses)
         

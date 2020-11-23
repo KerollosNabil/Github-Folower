@@ -24,7 +24,7 @@ class AvatarImageView: UIImageView {
         layer.cornerRadius = 16
         clipsToBounds = true
         image = placeholderImage
-        translatesAutoresizingMaskIntoConstraints = true
+        translatesAutoresizingMaskIntoConstraints = false
     }
     func downloadImage(from stringURL:String){
         let cacheKey = NSString(string: stringURL)

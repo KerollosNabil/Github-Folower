@@ -33,6 +33,16 @@ class DesignSizeCalculator{
     func getDesignSize(baseOn orientationIsPortrait:Bool) -> CGSize {
         return orientationIsPortrait ? designViewSizePortrait : designViewSizeLandscape
     }
+    func widthRatio(baseOn orientationIsPortrait:Bool)->CGFloat{
+        let designSize = orientationIsPortrait ? designViewSizePortrait : designViewSizeLandscape
+        let currentSize = orientationIsPortrait ? curentViewSizePortrait : curentViewSizeLandscape
+        return currentSize.width/designSize.width
+    }
+    func heightRatio(baseOn orientationIsPortrait:Bool)->CGFloat{
+        let designSize = orientationIsPortrait ? designViewSizePortrait : designViewSizeLandscape
+        let currentSize = orientationIsPortrait ? curentViewSizePortrait : curentViewSizeLandscape
+        return currentSize.height/designSize.height
+    }
     
     init(designViewSizePortraitMode:CGSize) {
         designViewSizePortrait = designViewSizePortraitMode

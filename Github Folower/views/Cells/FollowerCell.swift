@@ -10,8 +10,14 @@ import UIKit
 class FollowerCell: UICollectionViewCell {
     static let reuseID = "FollowerCell"
     
-    let avatarImageView = AvatarImageView(frame: .zero)
-    let usernameLabel = TitleLabel(textAlignment: .center)
+    private let avatarImageView = AvatarImageView(frame: .zero)
+    private let usernameLabel = TitleLabel(textAlignment: .center)
+    var follower:Follower?{
+        didSet{
+            usernameLabel.text = follower?.login
+            avatarImageView.downloadImage(from: follower!.avatarUrl)
+        }
+    }
     var padding:CGFloat = 8
     var labelToImageRatio:CGFloat = 0.20
     
