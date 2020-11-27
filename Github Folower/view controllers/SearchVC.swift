@@ -52,15 +52,15 @@ class SearchVC: ViewControllerWithAutoLayoutHelper {
         
         //add constraint for potrait mode
 
-        layoutHelper.attatchScalably(anchor: logoImageView.topAnchor, to: view.topAnchor, constant: 80, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScalably(anchor: logoImageView.centerXAnchor, to: view.centerXAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: logoImageView.topAnchor, to: view.topAnchor, constant: 80, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: logoImageView.centerXAnchor, to: view.centerXAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
         layoutHelper.addViewSizeConstrainsGuidedByWidth(to: logoImageView, with: CGSize(width: 200, height: 200), designOrientationIsPortrait: true, for: [.CompactRegular, .RegularRegularPortrait])
         layoutHelper.addViewSizeConstrainsGuidedByWidth(to: logoImageView, with: CGSize(width: 200, height: 200), designOrientationIsPortrait: false, for: [.RegularRegularLandscape])
         
         // for landscape
         
-        layoutHelper.attatchScalably(anchor: logoImageView.leadingAnchor, to: view.safeAreaLayoutGuide.leadingAnchor, constant: 80, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
-        layoutHelper.attatchScalably(anchor: logoImageView.centerYAnchor, to: view.safeAreaLayoutGuide.centerYAnchor, constant: 0, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToHeight(anchor: logoImageView.leadingAnchor, to: view.safeAreaLayoutGuide.leadingAnchor, constant: 80, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToHeight(anchor: logoImageView.centerYAnchor, to: view.safeAreaLayoutGuide.centerYAnchor, constant: 0, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
         layoutHelper.addViewSizeConstrainsGuidedByHeight(to: logoImageView, with: CGSize(width: 200, height: 200), designOrientationIsPortrait: false, for: [.CompactCompact,.RegularCompact])
     }
     
@@ -70,15 +70,15 @@ class SearchVC: ViewControllerWithAutoLayoutHelper {
         usernameTF.delegate = self
         usernameTF.returnKeyType = .go
     
-        layoutHelper.attatchScalably(anchor: usernameTF.topAnchor, to: logoImageView.bottomAnchor, constant: 48, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScalably(anchor: usernameTF.centerXAnchor, to: view.centerXAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: usernameTF.topAnchor, to: logoImageView.bottomAnchor, constant: 48, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: usernameTF.centerXAnchor, to: view.centerXAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
         layoutHelper.addViewSizeConstrainsGuidedByWidth(to: usernameTF, with: CGSize(width: 314, height: 50), designOrientationIsPortrait: true, for: [.CompactRegular, .RegularRegularPortrait])
         layoutHelper.addViewSizeConstrainsGuidedByWidth(to: usernameTF, with: CGSize(width: 314, height: 50), designOrientationIsPortrait: false, for: [.RegularRegularLandscape])
         
         //constraints for landscape
         
-        layoutHelper.attatchScalably(anchor: usernameTF.trailingAnchor, to: view.safeAreaLayoutGuide.trailingAnchor, constant: -20, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
-        layoutHelper.attatchScalably(anchor: usernameTF.centerYAnchor, to: view.safeAreaLayoutGuide.centerYAnchor, constant: -50, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToHeight(anchor: usernameTF.trailingAnchor, to: view.safeAreaLayoutGuide.trailingAnchor, constant: -20, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToHeight(anchor: usernameTF.centerYAnchor, to: view.safeAreaLayoutGuide.centerYAnchor, constant: -50, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
         layoutHelper.addViewSizeConstrainsGuidedByHeight(to: usernameTF, with: CGSize(width: 400, height: 50), designOrientationIsPortrait: false, for: [.CompactCompact,.RegularCompact])
        
     }
@@ -89,14 +89,14 @@ class SearchVC: ViewControllerWithAutoLayoutHelper {
         getFollowersButton.addTarget(self, action: #selector(pushFollowesListVC), for: .touchUpInside)
         
         getFollowersButton.translatesAutoresizingMaskIntoConstraints = false
-        layoutHelper.attatchScalably(anchor: getFollowersButton.bottomAnchor, to: view.safeAreaLayoutGuide.bottomAnchor, constant: -50, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScalably(anchor: getFollowersButton.centerXAnchor, to: view.centerXAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: getFollowersButton.bottomAnchor, to: view.safeAreaLayoutGuide.bottomAnchor, constant: -50, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: getFollowersButton.centerXAnchor, to: view.centerXAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
         layoutHelper.addViewSizeConstrainsGuidedByWidth(to: getFollowersButton, with: CGSize(width: 314, height: 50), designOrientationIsPortrait: true, for: [.CompactRegular, .RegularRegularPortrait])
         layoutHelper.addViewSizeConstrainsGuidedByWidth(to: getFollowersButton, with: CGSize(width: 314, height: 50), designOrientationIsPortrait: false, for: [.RegularRegularLandscape])
         
         
-        layoutHelper.attatchScalably(anchor: getFollowersButton.trailingAnchor, to: view.safeAreaLayoutGuide.trailingAnchor, constant: -20, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
-        layoutHelper.attatchScalably(anchor: getFollowersButton.centerYAnchor, to: view.safeAreaLayoutGuide.centerYAnchor, constant: 50, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToHeight(anchor: getFollowersButton.trailingAnchor, to: view.safeAreaLayoutGuide.trailingAnchor, constant: -20, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToHeight(anchor: getFollowersButton.centerYAnchor, to: view.safeAreaLayoutGuide.centerYAnchor, constant: 50, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
         layoutHelper.addViewSizeConstrainsGuidedByHeight(to: getFollowersButton, with: CGSize(width: 400, height: 50), designOrientationIsPortrait: false, for: [.CompactCompact,.RegularCompact])
     }
 

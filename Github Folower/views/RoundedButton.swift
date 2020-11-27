@@ -11,7 +11,7 @@ class RoundedButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        configur()
     }
     
     required init?(coder: NSCoder) {
@@ -36,5 +36,9 @@ class RoundedButton: UIButton {
         titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
         translatesAutoresizingMaskIntoConstraints = false
     }
-    
+    func set(backgroungColor:UIColor, title:String?) {
+        self.backgroundColor = backgroungColor
+        self.setTitle(title, for: .normal)
+        configur()
+    }
 }

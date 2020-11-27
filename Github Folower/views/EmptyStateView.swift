@@ -39,29 +39,29 @@ class EmptyStateView: UIViewWithAutoLayoutHellper {
         messageLabel.numberOfLines = 3
         messageLabel.textColor = .secondaryLabel
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
-        layoutHelper.attatchScalably(anchor: messageLabel.centerYAnchor, to: centerYAnchor, constant: -200, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScalably(anchor: messageLabel.centerXAnchor, to: centerXAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: messageLabel, with: CGSize(width: 334, height: 200), designOrientationIsPortrait: true, for:  [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape])
         
-        // landscape
-        layoutHelper.addViewSizeConstrainsGuidedByHeight(to: messageLabel, with: CGSize(width: 300, height: 300), designOrientationIsPortrait: false, for:  [.CompactCompact,.RegularCompact])
-        layoutHelper.attatchScalably(anchor: messageLabel.centerYAnchor, to: centerYAnchor, constant: 0, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
-        layoutHelper.attatchScalably(anchor: messageLabel.leadingAnchor, to: leadingAnchor, constant: 50, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: logoImageView, with: CGSize(width: 500, height: 500), designOrientationIsPortrait: true, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape])
+        layoutHelper.attatchScaledToWidth(anchor: logoImageView.trailingAnchor, to: trailingAnchor, constant: 170, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: logoImageView.bottomAnchor, to: bottomAnchor, constant: 140, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
         
+        //landscape
+        layoutHelper.addViewSizeConstrainsGuidedByHeight(to: logoImageView, with: CGSize(width: 450, height: 450), designOrientationIsPortrait: false, for: [.CompactCompact,.RegularCompact])
+        layoutHelper.attatchScaledToWidth(anchor: logoImageView.trailingAnchor, to: trailingAnchor, constant: 170, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToWidth(anchor: logoImageView.bottomAnchor, to: bottomAnchor, constant: 100, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
     }
     private func setupMessageLabel(){
         addSubview(messageLabel)
         logoImageView.image = UIImage(named: "empty-state-logo")
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         
-        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: logoImageView, with: CGSize(width: 500, height: 500), designOrientationIsPortrait: true, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape])
-        layoutHelper.attatchScalably(anchor: logoImageView.trailingAnchor, to: trailingAnchor, constant: 170, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScalably(anchor: logoImageView.bottomAnchor, to: bottomAnchor, constant: 140, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: messageLabel.centerYAnchor, to: centerYAnchor, constant: -200, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: messageLabel.centerXAnchor, to: centerXAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: messageLabel, with: CGSize(width: 334, height: 200), designOrientationIsPortrait: true, for:  [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape])
         
-        //landscape
-        layoutHelper.addViewSizeConstrainsGuidedByHeight(to: logoImageView, with: CGSize(width: 450, height: 450), designOrientationIsPortrait: false, for: [.CompactCompact,.RegularCompact])
-        layoutHelper.attatchScalably(anchor: logoImageView.trailingAnchor, to: trailingAnchor, constant: 170, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
-        layoutHelper.attatchScalably(anchor: logoImageView.bottomAnchor, to: bottomAnchor, constant: 100, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
+        // landscape
+        layoutHelper.addViewSizeConstrainsGuidedByHeight(to: messageLabel, with: CGSize(width: 300, height: 300), designOrientationIsPortrait: false, for:  [.CompactCompact,.RegularCompact])
+        layoutHelper.attatchScaledToWidth(anchor: messageLabel.centerYAnchor, to: centerYAnchor, constant: 0, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToWidth(anchor: messageLabel.leadingAnchor, to: leadingAnchor, constant: 50, for: [.CompactCompact,.RegularCompact], designOrientationIsPortrait: false)
         
     }
     

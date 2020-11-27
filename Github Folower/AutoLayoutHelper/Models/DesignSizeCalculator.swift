@@ -1,5 +1,5 @@
 //
-//  Devices.swift
+//  DesignSizeCalculator.swift
 //  Github Folower
 //
 //  Created by MAC on 10/12/20.
