@@ -16,6 +16,7 @@ class UserInfoVC: ViewControllerWithAutoLayoutHelper {
     private let headerInfoView = UIView()
     private let itemViewOne = UIView()
     private let itemViewTwo = UIView()
+    private let dateLabel = BodyLabel(textAlignment: .center)
 
     init(user:Follower) {
         self.user = user
@@ -51,6 +52,7 @@ class UserInfoVC: ViewControllerWithAutoLayoutHelper {
                     self.add(chiledVC: UserInfoHeaderVC(user: user), to: self.headerInfoView)
                     self.add(chiledVC: RepoItemVC(user: user), to: self.itemViewOne)
                     self.add(chiledVC: FollowerItemVC(user: user), to: self.itemViewTwo)
+                    self.dateLabel.text = "Github since \(self.convertDateToDisplayFormate(dateString: user.createdAt))"
                 }
             }
         }
@@ -60,6 +62,7 @@ class UserInfoVC: ViewControllerWithAutoLayoutHelper {
         configureHeaderView()
         configureItemViewOne()
         configureItemViewTwo()
+        configureDateLabel()
         layoutHelper.startLayout()
     }
     
@@ -88,6 +91,20 @@ class UserInfoVC: ViewControllerWithAutoLayoutHelper {
         layoutHelper.attatchScaledToWidth(anchor: itemViewTwo.topAnchor, to: itemViewOne.bottomAnchor, constant: padding, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
         layoutHelper.attatchScaledToWidth(anchor: itemViewTwo.centerXAnchor, to: view.centerXAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
         layoutHelper.addViewSizeConstrainsGuidedByWidth(to: itemViewTwo, with: CGSize(width: 374, height: 145), designOrientationIsPortrait: true, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape])
+    }
+    private func configureDateLabel(){
+        view.addSubview(dateLabel)
+        dateLabel.fitText = true
+        layoutHelper.attatchScaledToWidth(anchor: dateLabel.topAnchor, to: itemViewTwo.bottomAnchor, constant: padding, for: [.CompactRegular], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: dateLabel.leadingAnchor, to: view.leadingAnchor, constant: padding, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: dateLabel.trailingAnchor, to: view.trailingAnchor, constant: -padding, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.addScaledToWidth(dimension: dateLabel.heightAnchor, equalconstant: 18, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        
+    }
+    
+    func convertDateToDisplayFormate(dateString:String)->String{
+        guard let date = dateString.convertToDate() else { return "N/A" }
+        return date.dateStringWithFormat(format: "MMM yyyy")
     }
     
     @objc func dismissVC(){
