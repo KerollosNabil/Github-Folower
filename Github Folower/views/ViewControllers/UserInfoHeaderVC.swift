@@ -64,29 +64,33 @@ class UserInfoHeaderVC: ViewControllerWithAutoLayoutHelper {
         locationImageView.translatesAutoresizingMaskIntoConstraints = false
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         
-        layoutHelper.attatchScaledToWidth(anchor: avatarImageView.topAnchor, to: view.topAnchor, constant: pading, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: avatarImageView.leadingAnchor, to: view.leadingAnchor, constant: pading, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: avatarImageView, with: CGSize(width: 90, height: 90), designOrientationIsPortrait: true, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape])
+        layoutHelper.attatchScaledToWidth(anchor: avatarImageView.topAnchor, to: view.topAnchor, constant: pading, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: avatarImageView.leadingAnchor, to: view.leadingAnchor, constant: pading, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: avatarImageView, with: CGSize(width: 90, height: 90), designOrientationIsPortrait: true, for: [.CompactRegular, .CompactCompact,. RegularCompact])
         
-        layoutHelper.attatchScaledToWidth(anchor: userNameLabel.topAnchor, to: avatarImageView.topAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: userNameLabel.leadingAnchor, to: avatarImageView.trailingAnchor, constant: textToImagePading, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: userNameLabel, with: CGSize(width: 272, height: 38), designOrientationIsPortrait: true, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape])
+        layoutHelper.attatchScaledToWidth(anchor: userNameLabel.topAnchor, to: avatarImageView.topAnchor, constant: 0, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: userNameLabel.leadingAnchor, to: avatarImageView.trailingAnchor, constant: textToImagePading, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: userNameLabel.trailingAnchor, to: view.trailingAnchor, constant: 0, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.addScaledToWidth(dimension: userNameLabel.heightAnchor, equalconstant: 38, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
         
-        layoutHelper.attatchScaledToWidth(anchor: nameLabel.centerYAnchor, to: avatarImageView.centerYAnchor, constant: 8, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: nameLabel.leadingAnchor, to: avatarImageView.trailingAnchor, constant: textToImagePading, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: nameLabel, with: CGSize(width: 272, height: 20), designOrientationIsPortrait: true, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape])
+        layoutHelper.attatchScaledToWidth(anchor: nameLabel.centerYAnchor, to: avatarImageView.centerYAnchor, constant: 8, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: nameLabel.leadingAnchor, to: avatarImageView.trailingAnchor, constant: textToImagePading, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: nameLabel.trailingAnchor, to: view.trailingAnchor, constant: 0, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.addScaledToWidth(dimension: nameLabel.heightAnchor, equalconstant: 20, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
         
-        layoutHelper.attatchScaledToWidth(anchor: locationImageView.bottomAnchor, to: avatarImageView.bottomAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: locationImageView.leadingAnchor, to: avatarImageView.trailingAnchor, constant: textToImagePading, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: locationImageView, with: CGSize(width: 20, height: 20), designOrientationIsPortrait: true, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape])
+        layoutHelper.attatchScaledToWidth(anchor: locationImageView.bottomAnchor, to: avatarImageView.bottomAnchor, constant: 0, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: locationImageView.leadingAnchor, to: avatarImageView.trailingAnchor, constant: textToImagePading, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: locationImageView, with: CGSize(width: 20, height: 20), designOrientationIsPortrait: true, for: [.CompactRegular, .CompactCompact,. RegularCompact])
         
-        layoutHelper.attatchScaledToWidth(anchor: locationLabel.centerYAnchor, to: locationImageView.centerYAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: locationLabel.leadingAnchor, to: locationImageView.trailingAnchor, constant: 5, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: locationLabel, with: CGSize(width: 247, height: 20), designOrientationIsPortrait: true, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape])
+        layoutHelper.attatchScaledToWidth(anchor: locationLabel.centerYAnchor, to: locationImageView.centerYAnchor, constant: 0, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: locationLabel.leadingAnchor, to: locationImageView.trailingAnchor, constant: 5, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: locationLabel.trailingAnchor, to: view.trailingAnchor, constant: 0, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.addScaledToWidth(dimension: locationLabel.heightAnchor, equalconstant: 20, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
         
-        layoutHelper.attatchScaledToWidth(anchor: bioLabel.topAnchor, to: avatarImageView.bottomAnchor, constant: textToImagePading, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: bioLabel.leadingAnchor, to: avatarImageView.leadingAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: bioLabel, with: CGSize(width: 374, height: 78), designOrientationIsPortrait: true, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape])
+        layoutHelper.attatchScaledToWidth(anchor: bioLabel.topAnchor, to: avatarImageView.bottomAnchor, constant: textToImagePading, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: bioLabel.leadingAnchor, to: avatarImageView.leadingAnchor, constant: 0, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: bioLabel.trailingAnchor, to: view.trailingAnchor, constant: 0, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: bioLabel.bottomAnchor, to: view.bottomAnchor, constant: pading, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
     }
     
 

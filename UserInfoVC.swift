@@ -70,9 +70,17 @@ class UserInfoVC: ViewControllerWithAutoLayoutHelper {
         view.addSubview(headerInfoView)
         headerInfoView.translatesAutoresizingMaskIntoConstraints = false
         
-        layoutHelper.attatchScaledToWidth(anchor: headerInfoView.topAnchor, to: view.safeAreaLayoutGuide.topAnchor, constant: padding, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: headerInfoView.leadingAnchor, to: view.leadingAnchor, constant: padding, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: headerInfoView, with: CGSize(width: 374, height: 180), designOrientationIsPortrait: true, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape])
+        layoutHelper.attatchScaledToWidth(anchor: headerInfoView.topAnchor, to: view.safeAreaLayoutGuide.topAnchor, constant: padding, for: [.CompactRegular], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: headerInfoView.leadingAnchor, to: view.leadingAnchor, constant: padding, for: [.CompactRegular], designOrientationIsPortrait: true)
+        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: headerInfoView, with: CGSize(width: 374, height: 180), designOrientationIsPortrait: true, for: [.CompactRegular])
+        
+        // landscape
+        
+        layoutHelper.attatchScaledToHeight(anchor: headerInfoView.centerYAnchor, to: view.centerYAnchor, constant: -50, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToHeight(anchor: headerInfoView.leadingAnchor, to: view.safeAreaLayoutGuide.leadingAnchor, constant: padding, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToHeight(anchor: headerInfoView.trailingAnchor, to: view.centerXAnchor, constant: -padding, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.addScaledToHeight(dimension: headerInfoView.heightAnchor, equalconstant: 200, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
+        
         
     }
     
@@ -81,8 +89,15 @@ class UserInfoVC: ViewControllerWithAutoLayoutHelper {
         itemViewOne.translatesAutoresizingMaskIntoConstraints = false
         layoutHelper.attatchScaledToWidth(anchor: itemViewOne.topAnchor, to: headerInfoView.bottomAnchor, constant: padding, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
         layoutHelper.attatchScaledToWidth(anchor: itemViewOne.leadingAnchor, to: view.leadingAnchor, constant: padding, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: itemViewOne.trailingAnchor, to: view.trailingAnchor, constant: -padding, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: itemViewOne.trailingAnchor, to: view.safeAreaLayoutGuide.trailingAnchor, constant: -padding, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
         layoutHelper.addScaledToWidth(dimension: itemViewOne.heightAnchor, equalconstant: 145, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        
+        // landscape
+        
+        layoutHelper.attatchScaledToHeight(anchor: itemViewOne.bottomAnchor, to: view.centerYAnchor, constant: -padding/2, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToHeight(anchor: itemViewOne.leadingAnchor, to: view.centerXAnchor, constant: padding, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToHeight(anchor: itemViewOne.trailingAnchor, to: view.safeAreaLayoutGuide.trailingAnchor, constant: -padding, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.addScaledToHeight(dimension: itemViewOne.heightAnchor, equalconstant: 140, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
     }
     
     private func configureItemViewTwo(){
@@ -91,6 +106,13 @@ class UserInfoVC: ViewControllerWithAutoLayoutHelper {
         layoutHelper.attatchScaledToWidth(anchor: itemViewTwo.topAnchor, to: itemViewOne.bottomAnchor, constant: padding, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
         layoutHelper.attatchScaledToWidth(anchor: itemViewTwo.centerXAnchor, to: view.centerXAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
         layoutHelper.addViewSizeConstrainsGuidedByWidth(to: itemViewTwo, with: CGSize(width: 374, height: 145), designOrientationIsPortrait: true, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape])
+        
+        //landscape
+        
+        layoutHelper.attatchScaledToHeight(anchor: itemViewTwo.topAnchor, to: itemViewOne.bottomAnchor, constant: padding, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToHeight(anchor: itemViewTwo.leadingAnchor, to: itemViewOne.leadingAnchor, constant: 0, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToHeight(anchor: itemViewTwo.trailingAnchor, to: itemViewOne.trailingAnchor, constant: 0, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.addScaledToHeight(dimension: itemViewTwo.heightAnchor, equalconstant: 140, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
     }
     private func configureDateLabel(){
         view.addSubview(dateLabel)
@@ -98,7 +120,14 @@ class UserInfoVC: ViewControllerWithAutoLayoutHelper {
         layoutHelper.attatchScaledToWidth(anchor: dateLabel.topAnchor, to: itemViewTwo.bottomAnchor, constant: padding, for: [.CompactRegular], designOrientationIsPortrait: true)
         layoutHelper.attatchScaledToWidth(anchor: dateLabel.leadingAnchor, to: view.leadingAnchor, constant: padding, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
         layoutHelper.attatchScaledToWidth(anchor: dateLabel.trailingAnchor, to: view.trailingAnchor, constant: -padding, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.addScaledToWidth(dimension: dateLabel.heightAnchor, equalconstant: 18, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.addScaledToWidth(dimension: dateLabel.heightAnchor, equalconstant: 25, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        
+        //landscape
+        
+        layoutHelper.attatchScaledToHeight(anchor: dateLabel.topAnchor, to: headerInfoView.bottomAnchor, constant: padding, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToHeight(anchor: dateLabel.leadingAnchor, to: headerInfoView.leadingAnchor, constant: 0, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.attatchScaledToHeight(anchor: dateLabel.trailingAnchor, to: headerInfoView.trailingAnchor, constant: 0, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
+        layoutHelper.addScaledToHeight(dimension: dateLabel.heightAnchor, equalconstant: 25, for: [.CompactCompact, .RegularCompact], designOrientationIsPortrait: false)
         
     }
     

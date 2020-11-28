@@ -54,25 +54,25 @@ class InfoItemView: UIViewWithAutoLayoutHellper {
         symbolImageView.tintColor = .label
         symbolImageView.translatesAutoresizingMaskIntoConstraints = false
         
-        layoutHelper.attatchScaledToWidth(anchor: symbolImageView.topAnchor, to: self.topAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: symbolImageView.leadingAnchor, to: self.leadingAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: symbolImageView, with: CGSize(width: 20, height: 20), designOrientationIsPortrait: true, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape])
+        layoutHelper.attatchScaledToWidth(anchor: symbolImageView.topAnchor, to: self.topAnchor, constant: 0, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: symbolImageView.leadingAnchor, to: self.leadingAnchor, constant: 0, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.addViewSizeConstrainsGuidedByWidth(to: symbolImageView, with: CGSize(width: 20, height: 20), designOrientationIsPortrait: true, for: [.CompactRegular, .CompactCompact,. RegularCompact])
         
         
     }
     private func configureTitleLabel(){
         addSubview(titleLabel)
-        layoutHelper.attatchScaledToWidth(anchor: titleLabel.centerYAnchor, to: symbolImageView.centerYAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: titleLabel.leadingAnchor, to: symbolImageView.trailingAnchor, constant: 12, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: titleLabel.trailingAnchor, to: trailingAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.addScaledToWidth(dimension: titleLabel.heightAnchor, equalconstant: 18, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: titleLabel.centerYAnchor, to: symbolImageView.centerYAnchor, constant: 0, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: titleLabel.leadingAnchor, to: symbolImageView.trailingAnchor, constant: 12, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: titleLabel.trailingAnchor, to: trailingAnchor, constant: 0, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.addScaledToWidth(dimension: titleLabel.heightAnchor, equalconstant: 18, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
     }
     private func configureCountLabel(){
         addSubview(countLabel)
-        layoutHelper.attatchScaledToWidth(anchor: countLabel.topAnchor, to: symbolImageView.bottomAnchor, constant: 4, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: countLabel.leadingAnchor, to: leadingAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: countLabel.trailingAnchor, to: trailingAnchor, constant: 0, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.addScaledToWidth(dimension: countLabel.heightAnchor, equalconstant: 18, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: countLabel.topAnchor, to: symbolImageView.bottomAnchor, constant: 4, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: countLabel.leadingAnchor, to: leadingAnchor, constant: 0, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: countLabel.trailingAnchor, to: trailingAnchor, constant: 0, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.addScaledToWidth(dimension: countLabel.heightAnchor, equalconstant: 18, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
     }
     func set(itemInfoType:InfoTypes, count:Int){
         let itemInfo = itemInfoType.getItemInfo()

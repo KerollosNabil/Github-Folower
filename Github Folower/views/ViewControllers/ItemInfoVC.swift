@@ -59,17 +59,17 @@ class ItemInfoVC: ViewControllerWithAutoLayoutHelper {
     private func layoutInfoItemsStackView(){
         view.addSubview(infoItemsStackView)
         infoItemsStackView.translatesAutoresizingMaskIntoConstraints = false
-        layoutHelper.attatchScaledToWidth(anchor: infoItemsStackView.topAnchor, to: view.topAnchor, constant: padding, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: infoItemsStackView.leadingAnchor, to: view.leadingAnchor, constant: padding, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: infoItemsStackView.trailingAnchor, to: view.trailingAnchor, constant: -padding, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
-        layoutHelper.addScaledToWidth(dimension: infoItemsStackView.heightAnchor, equalconstant: 50, for: [.CompactRegular, .RegularRegularPortrait,.RegularRegularLandscape], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: infoItemsStackView.topAnchor, to: view.topAnchor, constant: padding, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: infoItemsStackView.leadingAnchor, to: view.leadingAnchor, constant: padding, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: infoItemsStackView.trailingAnchor, to: view.trailingAnchor, constant: -padding, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.addScaledToWidth(dimension: infoItemsStackView.heightAnchor, equalconstant: 50, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
     }
     private func setupActionButton(){
         view.addSubview(actionButton)
-        layoutHelper.attatchScaledToWidth(anchor: actionButton.bottomAnchor, to: view.bottomAnchor, constant: -padding, for: [.CompactRegular], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: actionButton.leadingAnchor, to: view.leadingAnchor, constant: padding, for: [.CompactRegular], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: actionButton.trailingAnchor, to: view.trailingAnchor, constant: -padding, for: [.CompactRegular], designOrientationIsPortrait: true)
-        layoutHelper.addScaledToWidth(dimension: actionButton.heightAnchor, equalconstant: 46, for: [.CompactRegular], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: actionButton.bottomAnchor, to: view.bottomAnchor, constant: -padding, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: actionButton.leadingAnchor, to: view.leadingAnchor, constant: padding, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: actionButton.trailingAnchor, to: view.trailingAnchor, constant: -padding, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.addScaledToWidth(dimension: actionButton.heightAnchor, equalconstant: 46, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
     }
 
 }
