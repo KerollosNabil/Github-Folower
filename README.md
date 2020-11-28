@@ -13,6 +13,6 @@ this app asks you for a GitHub username and gives you back a list of your GitHub
 <img src="screenShots/1.png" width="200"/>
 <img src="screenShots/1s.png" width="200"/>
 
-new ratio in landscape                  |  new ratio in portrait
-:------------------------------:|:---------------------------------:
-<img src="screenShots/1a.png"/> | <img src="screenShots/1.png"/>
+new ratio in landscape                  |  new ratio in portrait    |  old ratio in portrait    |  old ratio in landscape
+:------------------------------:|:---------------------------------:|:------------------------------:|:---------------------------------:
+<img src="screenShots/1a.png"/> | <img src="screenShots/1.png"/>   | <img src="screenShots/1s.png"/> | <img src="screenShots/1sa.png"/>
