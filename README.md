@@ -8,5 +8,11 @@ this app asks you for a GitHub username and gives you back a list of your GitHub
 
 * create <ins>**AutoLayoutHelper**</ins> framework that is used to make a <ins>**hardcoded**</ins> the constraints for autolayout and it will look <ins>**identical**</ins> in all the devices and it handles the <ins>**rotation**</ins> and the <ins>**size classes**</ins> for you  
 
-<img src="screenShots/1a.png" width="400"/>
+<img src="screenShots/1a.png" width="500"/>
+<img src="screenShots/1sa.png" width="500"/>
 <img src="screenShots/1.png" width="200"/>
+<img src="screenShots/1s.png" width="200"/>
+
+new ratio in landscape                  |  new ratio in portrait
+:------------------------------:|:---------------------------------:
+<img src="screenShots/1a.png"/> | <img src="screenShots/1.png"/>
