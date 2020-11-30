@@ -6,7 +6,7 @@ this app asks you for a GitHub username and gives you back a list of your GitHub
 
 ## my art on the app
 
-* create <ins>**AutoLayoutHelper**</ins> framework that is used to make a <ins>**hardcoded**</ins> the constraints for autolayout and it will look <ins>**identical**</ins> in all the devices and it handles the <ins>**rotation**</ins> and the <ins>**size classes**</ins> for you  
+* ### create <ins>**AutoLayoutHelper**</ins> framework that is used to make a <ins>**hardcoded**</ins> the constraints for autolayout and it will look <ins>**identical**</ins> in all the devices and it handles the <ins>**rotation**</ins> and the <ins>**size classes**</ins> for you  
 
 #### this code to layout any view in portrait and landscape for all devices
 
@@ -31,7 +31,7 @@ new ratio in landscape                  |  new ratio in portrait    |  old ratio
 <img src="screenShots/3a.png"/> | <img src="screenShots/3.png"/>   | <img src="screenShots/3s.png"/> | <img src="screenShots/3sa.png"/>
 <img src="screenShots/4a.png"/> | <img src="screenShots/4.png"/>   | <img src="screenShots/4s.png"/> | <img src="screenShots/4sa.png"/>
 
-* make extentions to adjust the font to fit inside the label
+* ### make extentions to adjust the font to fit inside the label
 
 ```swift
 override func layoutSubviews() {
@@ -47,7 +47,7 @@ like the usernames in the labels in the followers list
 
 <img src="screenShots/3.png" width=200/>
 
-* make super customizable generic alert that can customize literally anything 
+* ### make super customizable generic alert that can customize literally anything 
     * generic labels for the title and the body 
     * add any type of buttons
     * customize the colors and the sizes of the alert elemets
