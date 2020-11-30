@@ -1,4 +1,4 @@
-# Github Folower (from Sellen course)
+# Github Follower (from Sellen course)
 
 ## discreption
 
