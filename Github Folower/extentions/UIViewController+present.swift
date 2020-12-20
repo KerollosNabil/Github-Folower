@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 extension UIViewController {
     func presentGFAlertOnMainThread(title: String, message: String, buttontitle: String) {
@@ -25,5 +26,11 @@ extension UIViewController {
         addChild(chiledVC)
         containerView.addSubview(chiledVC.view)
         chiledVC.view.frame = containerView.bounds
+    }
+    
+    func presentSafariCV(with url: URL) {
+        let safariVC = SFSafariViewController(url: url)
+        safariVC.preferredControlTintColor = .systemGreen
+        present(safariVC, animated: true)
     }
 }

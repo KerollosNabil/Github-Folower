@@ -14,13 +14,14 @@ class ItemInfoVC: ViewControllerWithAutoLayoutHelper {
     let actionButton = RoundedButton()
     let infoItemViewOne = InfoItemView()
     let infoItemViewTwo = InfoItemView()
+    weak var delegate: UserInfoDelegate!
     
     private let sizeClsses: Set<DeviceSizeClassManager.DeviceSizeClass> = [.compactRegular, .compactCompact, . regularCompact]
     
     private let infoItemsStackView = UIStackView()
     
     var user: User
-
+    
     init(user: User) {
         self.user = user
         super.init(nibName: nil, bundle: nil)
@@ -35,6 +36,8 @@ class ItemInfoVC: ViewControllerWithAutoLayoutHelper {
         configureBackgroundView()
         configureSupviews()
     }
+    
+    @objc func actionButtonTapped() {}
     
     private func configureBackgroundView() {
         view.layer.cornerRadius = 18 * layoutHelper.designCalculator.heightFraction(isPortrait: true)
@@ -67,6 +70,7 @@ class ItemInfoVC: ViewControllerWithAutoLayoutHelper {
     }
     private func setupActionButton() {
         view.addSubview(actionButton)
+        actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
         layoutHelper.attatchScaledToWidth(anchor: actionButton.bottomAnchor, to: view.bottomAnchor, constant: -padding, for: sizeClsses, designOrientationIsPortrait: true)
         layoutHelper.attatchScaledToWidth(anchor: actionButton.leadingAnchor, toAnchor: view.leadingAnchor, constant: padding, for: sizeClsses, designOrientationIsPortrait: true)
         layoutHelper.attatchScaledToWidth(anchor: actionButton.trailingAnchor, toAnchor: view.trailingAnchor, constant: -padding, for: sizeClsses, designOrientationIsPortrait: true)

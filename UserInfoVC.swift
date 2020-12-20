@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol UserInfoDelegate: class {
+    func didTapGithubProfile(user: User)
+    func didTapGetFollowers()
+}
+
 class UserInfoVC: ViewControllerWithAutoLayoutHelper {
     
     var user: Follower
@@ -17,7 +22,7 @@ class UserInfoVC: ViewControllerWithAutoLayoutHelper {
     private let itemViewOne = UIView()
     private let itemViewTwo = UIView()
     private let dateLabel = BodyLabel(textAlignment: .center)
-
+   
     init(user: Follower) {
         self.user = user
         super.init(nibName: nil, bundle: nil)
@@ -49,13 +54,21 @@ class UserInfoVC: ViewControllerWithAutoLayoutHelper {
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttontitle: "Ok")
             case .success(let user):
                 DispatchQueue.main.async {
-                    self.add(chiledVC: UserInfoHeaderVC(user: user), to: self.headerInfoView)
-                    self.add(chiledVC: RepoItemVC(user: user), to: self.itemViewOne)
-                    self.add(chiledVC: FollowerItemVC(user: user), to: self.itemViewTwo)
-                    self.dateLabel.text = "Github since \(self.convertDateToDisplayFormate(dateString: user.createdAt))"
+                    self.configureItems(user: user)
                 }
             }
         }
+    }
+    
+    private func configureItems(user: User) {
+        let repoItemVC = RepoItemVC(user: user)
+        repoItemVC.delegate = self
+        let followerItemCV = FollowerItemVC(user: user)
+        followerItemCV.delegate = self
+        self.add(chiledVC: UserInfoHeaderVC(user: user), to: self.headerInfoView)
+        self.add(chiledVC: repoItemVC, to: self.itemViewOne)
+        self.add(chiledVC: followerItemCV, to: self.itemViewTwo)
+        self.dateLabel.text = "Github since \(self.convertDateToDisplayFormate(dateString: user.createdAt))"
     }
     
     private func configureUI() {
@@ -144,3 +157,17 @@ class UserInfoVC: ViewControllerWithAutoLayoutHelper {
     }
 
 }
+ extension UserInfoVC: UserInfoDelegate {
+    func didTapGithubProfile(user: User) {
+        guard let url = URL(string: user.htmlUrl)else {
+            presentGFAlertOnMainThread(title: "Invalid URL", message: "the requested url is invalid", buttontitle: "Ok")
+            return
+        }
+        presentSafariCV(with: url)
+    }
+    
+    func didTapGetFollowers() {
+        
+    }
+    
+ }

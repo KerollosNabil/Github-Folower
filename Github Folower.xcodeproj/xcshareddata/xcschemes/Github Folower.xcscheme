@@ -49,6 +49,16 @@
                ReferencedContainer = "container:Github Folower.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "047CD8C3258FA3EF009E9B65"
+               BuildableName = "UserInfoTests.xctest"
+               BlueprintName = "UserInfoTests"
+               ReferencedContainer = "container:Github Folower.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

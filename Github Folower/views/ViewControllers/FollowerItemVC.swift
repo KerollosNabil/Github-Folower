@@ -13,7 +13,9 @@ class FollowerItemVC: ItemInfoVC {
         super.viewDidLoad()
         configureItems()
     }
-    
+    override func actionButtonTapped() {
+        delegate.didTapGetFollowers()
+    }
     private func configureItems() {
         infoItemViewOne.set(itemInfoType: .followers, count: user.followers)
         infoItemViewTwo.set(itemInfoType: .following, count: user.following)

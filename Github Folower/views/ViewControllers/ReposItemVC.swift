@@ -14,6 +14,10 @@ class RepoItemVC: ItemInfoVC {
         configureItems()
     }
     
+    override func actionButtonTapped() {
+        delegate.didTapGithubProfile(user: user)
+    }
+    
     private func configureItems() {
         infoItemViewOne.set(itemInfoType: .repos, count: user.publicRepos)
         infoItemViewTwo.set(itemInfoType: .gists, count: user.publicGists)
