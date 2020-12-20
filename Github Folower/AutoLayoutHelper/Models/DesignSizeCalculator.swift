@@ -9,10 +9,16 @@ import UIKit
 
 class DesignSizeCalculator{
     
+    private let curentScreenSize = UIScreen.main.bounds
+    
     private var designViewSizePortrait:CGSize
     private var designViewSizeLandscape:CGSize
-    private var curentViewSizePortrait:CGSize
-    private var curentViewSizeLandscape:CGSize
+    var curentViewSizePortrait:CGSize{
+        return CGSize(width: min(curentScreenSize.width, curentScreenSize.height) , height: max(curentScreenSize.width, curentScreenSize.height))
+    }
+    var curentViewSizeLandscape:CGSize{
+        return CGSize(width: curentViewSizePortrait.height, height: curentViewSizePortrait.width)
+    }
     
     
     
@@ -46,10 +52,7 @@ class DesignSizeCalculator{
     
     init(designViewSizePortraitMode:CGSize) {
         designViewSizePortrait = designViewSizePortraitMode
-        let curentScreenSize = UIScreen.main.bounds
         designViewSizeLandscape = CGSize(width: designViewSizePortrait.height, height: designViewSizePortrait.width)
-        curentViewSizePortrait = CGSize(width: min(curentScreenSize.width, curentScreenSize.height) , height: max(curentScreenSize.width, curentScreenSize.height))
-        curentViewSizeLandscape = CGSize(width: curentViewSizePortrait.height, height: curentViewSizePortrait.width)
         
         
     }

@@ -38,6 +38,7 @@
 		047684E9256BD6D60048CC71 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047684E8256BD6D60048CC71 /* Constants.swift */; };
 		047684F2256C5EC90048CC71 /* ViewControllerWithAutoLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047684F1256C5EC90048CC71 /* ViewControllerWithAutoLayoutHelper.swift */; };
 		047684FA256C6A730048CC71 /* UIViewWithAutoLayoutHellper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047684F9256C6A730048CC71 /* UIViewWithAutoLayoutHellper.swift */; };
+		04930E1025851AAB0047F62E /* DesignSizeCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04930E0F25851AAB0047F62E /* DesignSizeCalculatorTests.swift */; };
 		0498826C253DD2C100BA2130 /* AlertBodyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0498826B253DD2C100BA2130 /* AlertBodyVC.swift */; };
 		049D218825392E9300902747 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D218725392E9300902747 /* FollowerListVC.swift */; };
 		04EF04F2255402B100F168AB /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF04F1255402B100F168AB /* String+Ext.swift */; };
@@ -109,6 +110,7 @@
 		047684E8256BD6D60048CC71 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		047684F1256C5EC90048CC71 /* ViewControllerWithAutoLayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWithAutoLayoutHelper.swift; sourceTree = "<group>"; };
 		047684F9256C6A730048CC71 /* UIViewWithAutoLayoutHellper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewWithAutoLayoutHellper.swift; sourceTree = "<group>"; };
+		04930E0F25851AAB0047F62E /* DesignSizeCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSizeCalculatorTests.swift; sourceTree = "<group>"; };
 		0498826B253DD2C100BA2130 /* AlertBodyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBodyVC.swift; sourceTree = "<group>"; };
 		049D218725392E9300902747 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
 		04EF04F1255402B100F168AB /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				04534025252D4D03003A9DA6 /* Github_FolowerTests.swift */,
+				04930E0F25851AAB0047F62E /* DesignSizeCalculatorTests.swift */,
 				04534027252D4D03003A9DA6 /* Info.plist */,
 			);
 			path = "Github FolowerTests";
@@ -570,6 +573,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04930E1025851AAB0047F62E /* DesignSizeCalculatorTests.swift in Sources */,
 				04534026252D4D03003A9DA6 /* Github_FolowerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
