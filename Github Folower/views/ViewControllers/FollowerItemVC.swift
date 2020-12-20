@@ -14,7 +14,7 @@ class FollowerItemVC: ItemInfoVC {
         configureItems()
     }
     
-    private func configureItems(){
+    private func configureItems() {
         infoItemViewOne.set(itemInfoType: .followers, count: user.followers)
         infoItemViewTwo.set(itemInfoType: .following, count: user.following)
         actionButton.set(backgroungColor: .systemGreen, title: "Get Followers")

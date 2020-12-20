@@ -7,35 +7,32 @@
 
 import UIKit
 
-class AlertBodyVC<AlertTitleLabel, AlertMessageLabel>: UIViewController where AlertTitleLabel:UILabel, AlertMessageLabel:UILabel {
-    
+class AlertBodyVC<AlertTitleLabel, AlertMessageLabel>: UIViewController where AlertTitleLabel: UILabel, AlertMessageLabel: UILabel {
     
     private let titleLabel = AlertTitleLabel()
     private let messageLabel = AlertMessageLabel()
     private let buttonsStack = ButtonsStackVC()
     private let viewsStack = UIStackView()
-    private var alertSize:CGSize?
+    private var alertSize: CGSize?
     
-    var adjustBodyFontToFit:Bool = true
+    var adjustBodyFontToFit: Bool = true
     
-    var alertBackGroundColor:UIColor = .systemBackground
-    var alertBackgroundOpacity:CGFloat = 1
-    var titleBackgroundColor:UIColor = .clear
-    var bodyBackgroundColor:UIColor = .clear
-    var buttonsViewBackgroundColor:UIColor = .clear
-    var alertBorderColor:UIColor = UIColor.label
+    var alertBackGroundColor: UIColor = .systemBackground
+    var alertBackgroundOpacity: CGFloat = 1
+    var titleBackgroundColor: UIColor = .clear
+    var bodyBackgroundColor: UIColor = .clear
+    var buttonsViewBackgroundColor: UIColor = .clear
+    var alertBorderColor: UIColor = UIColor.label
     
-    var alertCornerRadusFractionOfWidath:CGFloat = 16/320
-    var alertBorderWidthFractionOfWidath:CGFloat = 2/320
-    var titleHeightFraction:CGFloat = 32/260
-    var buttonsHeightFraction:CGFloat = 44/260
+    var alertCornerRadusFractionOfWidath: CGFloat = 16/320
+    var alertBorderWidthFractionOfWidath: CGFloat = 2/320
+    var titleHeightFraction: CGFloat = 32/260
+    var buttonsHeightFraction: CGFloat = 44/260
     
+    var yAxisPaddingFraction: CGFloat = 10/220
+    var xAxisPaddingFraction: CGFloat = 10/260
     
-    var yAxisPaddingFraction:CGFloat = 10/220
-    var xAxisPaddingFraction:CGFloat = 10/260
-    
-    
-    init(title:String?, message:String?, alertSize:CGSize) {
+    init(title: String?, message: String?, alertSize: CGSize) {
         super.init(nibName: nil, bundle: nil)
         
         titleLabel.text = title ?? "Something Went Wrong"
@@ -54,12 +51,12 @@ class AlertBodyVC<AlertTitleLabel, AlertMessageLabel>: UIViewController where Al
         
     }
     
-    private func setupView(){
+    private func setupView() {
         setupStackView()
         setupAlertProperties()
     }
     
-    private func setupStackView(){
+    private func setupStackView() {
         view.addSubview(viewsStack)
         viewsStack.axis = .vertical
         viewsStack.alignment = .fill
@@ -99,8 +96,6 @@ class AlertBodyVC<AlertTitleLabel, AlertMessageLabel>: UIViewController where Al
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
         
-        
-        
     }
     private func addButtonsStackView() {
         addChild(buttonsStack)
@@ -110,7 +105,7 @@ class AlertBodyVC<AlertTitleLabel, AlertMessageLabel>: UIViewController where Al
         buttonsStack.fitTextToBound = true
     }
     
-    private func setupAlertProperties(){
+    private func setupAlertProperties() {
         self.view.backgroundColor = alertBackGroundColor
         self.view.alpha = alertBackgroundOpacity
         titleLabel.backgroundColor = titleBackgroundColor
@@ -140,18 +135,14 @@ class AlertBodyVC<AlertTitleLabel, AlertMessageLabel>: UIViewController where Al
         updateLabelsFont()
     }
     
-    private func updateLabelsFont(){
+    private func updateLabelsFont() {
         
-        if adjustBodyFontToFit{ messageLabel.fitTextToBounds()}
+        if adjustBodyFontToFit { messageLabel.fitTextToBounds()}
         
     }
-
-
     
-    func addButton<Button:UIButton>(button:Button, action:Selector?, target:Any?) {
+    func addButton<Button: UIButton>(button: Button, action: Selector?, target: Any?) {
         buttonsStack.addButton(button: button, action: action, target: target)
     }
-
-    
 
 }

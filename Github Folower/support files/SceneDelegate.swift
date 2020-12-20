@@ -11,7 +11,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -37,17 +36,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return favoriteVC.embedInNavigationController()
     }
     
-    private func configureNavigationController(){
+    private func configureNavigationController() {
         UINavigationBar.appearance().tintColor = .systemGreen
     }
     
-    private func createTabBar(viewControllers:[UIViewController]) -> UITabBarController {
+    private func createTabBar(viewControllers: [UIViewController]) -> UITabBarController {
         let tabBar = UITabBarController()
         UITabBar.appearance().tintColor = .systemGreen
         tabBar.viewControllers = viewControllers
         return tabBar
     }
-    
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
@@ -77,6 +75,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
 }
-

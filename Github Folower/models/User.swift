@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct User:Codable, Hashable {
+struct User: Codable, Hashable {
     
-    var login:String
-    var avatarUrl:String
-    var name:String?
-    var bio:String?
-    var location:String?
-    var publicRepos:Int
-    var publicGists:Int
-    var htmlUrl:String
-    var followers:Int
-    var following:Int
-    var createdAt:String
+    var login: String
+    var avatarUrl: String
+    var name: String?
+    var bio: String?
+    var location: String?
+    var publicRepos: Int
+    var publicGists: Int
+    var htmlUrl: String
+    var followers: Int
+    var following: Int
+    var createdAt: String
     
 }

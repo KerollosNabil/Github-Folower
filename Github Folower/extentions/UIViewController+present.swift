@@ -7,8 +7,8 @@
 
 import UIKit
 
-extension UIViewController{
-    func presentGFAlertOnMainThread(title:String, message:String, buttontitle:String){
+extension UIViewController {
+    func presentGFAlertOnMainThread(title: String, message: String, buttontitle: String) {
         DispatchQueue.main.async {
             let alertVC = AlertVC<TitleLabel, BodyLabel>(title: title, message: message)
             let button = RoundedButton(backgroungColor: .systemPink, title: buttontitle)
@@ -21,7 +21,7 @@ extension UIViewController{
         }
         
     }
-    func add(chiledVC:UIViewController, to containerView:UIView) {
+    func add(chiledVC: UIViewController, to containerView: UIView) {
         addChild(chiledVC)
         containerView.addSubview(chiledVC.view)
         chiledVC.view.frame = containerView.bounds

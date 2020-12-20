@@ -7,8 +7,8 @@
 
 import UIKit
 
-extension Date{
-    func dateStringWithFormat(format:String)->String{
+extension Date {
+    func dateStringWithFormat(format: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: self)

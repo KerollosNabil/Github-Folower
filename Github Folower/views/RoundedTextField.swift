@@ -18,18 +18,17 @@ class RoundedTextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(placeholder:String) {
+    init(placeholder: String) {
         super.init(frame: .zero)
         self.placeholder = placeholder
         configur()
     }
-   
 
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = min(bounds.height, bounds.width) / 5.0
     }
-    private func configur(){
+    private func configur() {
 
         layer.borderWidth = 2
         layer.borderColor = UIColor.systemGray4.cgColor
@@ -43,7 +42,6 @@ class RoundedTextField: UITextField {
         
         backgroundColor = .tertiarySystemBackground
         autocorrectionType = .no
-        
         
         translatesAutoresizingMaskIntoConstraints = true
                 

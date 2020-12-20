@@ -9,17 +9,19 @@ import UIKit
 
 class ItemInfoVC: ViewControllerWithAutoLayoutHelper {
 
-    var padding:CGFloat = 20
+    var padding: CGFloat = 20
     
     let actionButton = RoundedButton()
     let infoItemViewOne = InfoItemView()
     let infoItemViewTwo = InfoItemView()
     
+    private let sizeClsses: Set<DeviceSizeClassManager.DeviceSizeClass> = [.compactRegular, .compactCompact, . regularCompact]
+    
     private let infoItemsStackView = UIStackView()
     
-    var user:User
+    var user: User
 
-    init(user:User) {
+    init(user: User) {
         self.user = user
         super.init(nibName: nil, bundle: nil)
     }
@@ -34,42 +36,41 @@ class ItemInfoVC: ViewControllerWithAutoLayoutHelper {
         configureSupviews()
     }
     
-    private func configureBackgroundView(){
+    private func configureBackgroundView() {
         view.layer.cornerRadius = 18 * layoutHelper.designCalculator.heightFraction(isPortrait: true)
         view.backgroundColor = .secondarySystemBackground
     }
-    private func configureSupviews(){
+    private func configureSupviews() {
         
         setupInfoItemsStackView()
         setupActionButton()
     }
-    private func setupInfoItemsStackView(){
+    private func setupInfoItemsStackView() {
         layoutInfoItemsStackView()
         configureInfoItemsStackView()
     }
-    private func configureInfoItemsStackView(){
+    private func configureInfoItemsStackView() {
         infoItemsStackView.axis = .horizontal
         infoItemsStackView.distribution = .equalSpacing
-        
-        
         
         infoItemsStackView.addArrangedSubview(infoItemViewOne)
         infoItemsStackView.addArrangedSubview(infoItemViewTwo)
     }
-    private func layoutInfoItemsStackView(){
+    private func layoutInfoItemsStackView() {
         view.addSubview(infoItemsStackView)
         infoItemsStackView.translatesAutoresizingMaskIntoConstraints = false
-        layoutHelper.attatchScaledToWidth(anchor: infoItemsStackView.topAnchor, to: view.topAnchor, constant: padding, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: infoItemsStackView.leadingAnchor, to: view.leadingAnchor, constant: padding, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: infoItemsStackView.trailingAnchor, to: view.trailingAnchor, constant: -padding, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
-        layoutHelper.addScaledToWidth(dimension: infoItemsStackView.heightAnchor, equalconstant: 50, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        
+        layoutHelper.attatchScaledToWidth(anchor: infoItemsStackView.topAnchor, to: view.topAnchor, constant: padding, for: sizeClsses, designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: infoItemsStackView.leadingAnchor, toAnchor: view.leadingAnchor, constant: padding, for: sizeClsses, designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: infoItemsStackView.trailingAnchor, toAnchor: view.trailingAnchor, constant: -padding, for: sizeClsses, designOrientationIsPortrait: true)
+        layoutHelper.addScaledToWidth(dimension: infoItemsStackView.heightAnchor, equalconstant: 50, for: [.compactRegular, .compactCompact, . regularCompact], designOrientationIsPortrait: true)
     }
-    private func setupActionButton(){
+    private func setupActionButton() {
         view.addSubview(actionButton)
-        layoutHelper.attatchScaledToWidth(anchor: actionButton.bottomAnchor, to: view.bottomAnchor, constant: -padding, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: actionButton.leadingAnchor, to: view.leadingAnchor, constant: padding, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
-        layoutHelper.attatchScaledToWidth(anchor: actionButton.trailingAnchor, to: view.trailingAnchor, constant: -padding, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
-        layoutHelper.addScaledToWidth(dimension: actionButton.heightAnchor, equalconstant: 46, for: [.CompactRegular, .CompactCompact,. RegularCompact], designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: actionButton.bottomAnchor, to: view.bottomAnchor, constant: -padding, for: sizeClsses, designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: actionButton.leadingAnchor, toAnchor: view.leadingAnchor, constant: padding, for: sizeClsses, designOrientationIsPortrait: true)
+        layoutHelper.attatchScaledToWidth(anchor: actionButton.trailingAnchor, toAnchor: view.trailingAnchor, constant: -padding, for: sizeClsses, designOrientationIsPortrait: true)
+        layoutHelper.addScaledToWidth(dimension: actionButton.heightAnchor, equalconstant: 46, for: [.compactRegular, .compactCompact, . regularCompact], designOrientationIsPortrait: true)
     }
 
 }

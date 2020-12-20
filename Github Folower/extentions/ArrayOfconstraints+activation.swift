@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension Array where Element : NSLayoutConstraint {
+extension Array where Element: NSLayoutConstraint {
     func activate() {
         NSLayoutConstraint.activate(self)
         if !isEmpty, !self[0].isActive {

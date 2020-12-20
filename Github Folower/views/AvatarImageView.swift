@@ -20,15 +20,15 @@ class AvatarImageView: UIImageView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(){
+    func configure() {
         layer.cornerRadius = 16
         clipsToBounds = true
         image = placeholderImage
         translatesAutoresizingMaskIntoConstraints = false
     }
-    func downloadImage(from stringURL:String){
+    func downloadImage(from stringURL: String) {
         let cacheKey = NSString(string: stringURL)
-        if let image = NetworkManager.shared.cache.object(forKey: cacheKey){
+        if let image = NetworkManager.shared.cache.object(forKey: cacheKey) {
             self.image = image
             return
         }

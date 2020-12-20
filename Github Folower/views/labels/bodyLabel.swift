@@ -19,7 +19,7 @@ class BodyLabel: UILabel {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    init(textAlignment:NSTextAlignment) {
+    init(textAlignment: NSTextAlignment) {
         super.init(frame: .zero)
         self.textAlignment = textAlignment
         configure()
@@ -30,11 +30,11 @@ class BodyLabel: UILabel {
         
         if numberOfLines > 0 {
             fitText(maxLines: UInt(numberOfLines))
-        }else{
+        } else {
             fitTextToBounds()
         }
     }
-    private func configure(){
+    private func configure() {
         textColor = .secondaryLabel
         font = UIFont.preferredFont(forTextStyle: .body)
         adjustsFontSizeToFitWidth = true

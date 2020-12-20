@@ -9,7 +9,7 @@ import UIKit
 
 class ViewControllerWithAutoLayoutHelper: UIViewController {
 
-    var layoutHelper:AutolayoutHelper!
+    var layoutHelper: AutolayoutHelper!
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutHelper = AutolayoutHelper(designViewSizePortraitMode: CGSize(width: 414, height: 896))
@@ -18,8 +18,5 @@ class ViewControllerWithAutoLayoutHelper: UIViewController {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         layoutHelper.startLayout()
     }
-    
-
-    
 
 }

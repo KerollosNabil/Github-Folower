@@ -7,7 +7,7 @@
 
 import XCTest
 
-class Github_FolowerUITests: XCTestCase {
+class GithubFolowerUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

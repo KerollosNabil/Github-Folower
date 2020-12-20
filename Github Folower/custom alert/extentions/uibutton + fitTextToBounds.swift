@@ -16,7 +16,6 @@ extension UIButton {
         titleLabel.numberOfLines = 0
         self.titleLabel?.font = UIFont.fontFittingText(text, in: bounds.size, fontDescriptor: font.fontDescriptor, option: .preferredLineCount(maxLines))
         
-        
     }
         
         /**

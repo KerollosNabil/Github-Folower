@@ -7,42 +7,41 @@
 
 import UIKit
 
-class AlertVC<AlertTitleLabel, AlertMessageLabel>: UIViewController where AlertTitleLabel:UILabel, AlertMessageLabel:UILabel {
+class AlertVC<AlertTitleLabel, AlertMessageLabel>: UIViewController where AlertTitleLabel: UILabel, AlertMessageLabel: UILabel {
     
-    private var alertBodyVC : AlertBodyVC<AlertTitleLabel,AlertMessageLabel>!
-   
+    private var alertBodyVC: AlertBodyVC<AlertTitleLabel, AlertMessageLabel>!
     
-    var alertSize:CGSize?
+    var alertSize: CGSize?
     var alertSizeFraction = CGSize(width: (320.0/414.0), height: (260/896))
     
-    var adjustBodyFontToFit:Bool?
+    var adjustBodyFontToFit: Bool?
     
-    var backgroundColor:UIColor = .systemBackground
-    var alpha:CGFloat = 0.75
-    var alertPosition:CGPoint?
-    var centerOffsetFraction:CGPoint?
+    var backgroundColor: UIColor = .systemBackground
+    var alpha: CGFloat = 0.75
+    var alertPosition: CGPoint?
+    var centerOffsetFraction: CGPoint?
     
-    var yAxisPaddingFractionOfHeight:CGFloat?
-    var xAxisPaddingFractionOfWidth:CGFloat?
-    var titleHeightFraction:CGFloat?
-    var buttonsHeightFraction:CGFloat?
+    var yAxisPaddingFractionOfHeight: CGFloat?
+    var xAxisPaddingFractionOfWidth: CGFloat?
+    var titleHeightFraction: CGFloat?
+    var buttonsHeightFraction: CGFloat?
     
-    var alertCornerRadusFractionOfWidath:CGFloat?
-    var alertBorderWidthFractionOfWidath:CGFloat?
+    var alertCornerRadusFractionOfWidath: CGFloat?
+    var alertBorderWidthFractionOfWidath: CGFloat?
     
-    var alertBackGroundColor:UIColor?
-    var alertBackgroundOpacity:CGFloat?
-    var titleBackgroundColor:UIColor?
-    var bodyBackgroundColor:UIColor?
-    var buttonsViewBackgroundColor:UIColor?
-    var alertBorderColor:UIColor?
+    var alertBackGroundColor: UIColor?
+    var alertBackgroundOpacity: CGFloat?
+    var titleBackgroundColor: UIColor?
+    var bodyBackgroundColor: UIColor?
+    var buttonsViewBackgroundColor: UIColor?
+    var alertBorderColor: UIColor?
     
-    init(title:String?, message:String?) {
+    init(title: String?, message: String?) {
         super.init(nibName: nil, bundle: nil)
         let width = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
         let height = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
         alertSize = CGSize(width: width * alertSizeFraction.width, height: height * alertSizeFraction.height)
-        self.alertBodyVC = AlertBodyVC(title: title, message: message, alertSize:alertSize!)
+        self.alertBodyVC = AlertBodyVC(title: title, message: message, alertSize: alertSize ?? .zero)
         
     }
     
@@ -55,10 +54,10 @@ class AlertVC<AlertTitleLabel, AlertMessageLabel>: UIViewController where AlertT
         configureAlertViewControler()
         
     }
-    func setupAlertView(){
+    func setupAlertView() {
         view.backgroundColor = backgroundColor.withAlphaComponent(alpha)
     }
-    func configureAlertViewControler(){
+    func configureAlertViewControler() {
         self.addChild(alertBodyVC)
         configureAlertViewControlerProperties()
         view.addSubview(alertBodyVC.view)
@@ -67,65 +66,64 @@ class AlertVC<AlertTitleLabel, AlertMessageLabel>: UIViewController where AlertT
        
     }
     
-    func configureAlertViewControlerAutoLayout(){
+    func configureAlertViewControlerAutoLayout() {
         alertBodyVC.view.translatesAutoresizingMaskIntoConstraints = false
         
-        alertBodyVC.view.widthAnchor.constraint(equalToConstant: alertSize!.width).isActive = true
-        alertBodyVC.view.heightAnchor.constraint(equalToConstant: alertSize!.height).isActive = true
-        if centerOffsetFraction == nil , let alertPosition = alertPosition{
+        alertBodyVC.view.widthAnchor.constraint(equalToConstant: alertSize?.width ?? 0 ).isActive = true
+        alertBodyVC.view.heightAnchor.constraint(equalToConstant: alertSize?.height ?? 0).isActive = true
+        if centerOffsetFraction == nil, let alertPosition = alertPosition {
             alertBodyVC.view.frame = CGRect(origin: alertPosition, size: alertBodyVC.view.bounds.size)
-        }else{
-            alertBodyVC.view.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: (centerOffsetFraction?.x ?? 0) * view.bounds.width).isActive = true
-            alertBodyVC.view.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: (centerOffsetFraction?.y ?? 0) * view.bounds.height).isActive = true
+        } else {
+            NSLayoutConstraint.activate([
+                alertBodyVC.view.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: (centerOffsetFraction?.x ?? 0) * view.bounds.width),
+                alertBodyVC.view.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: (centerOffsetFraction?.y ?? 0) * view.bounds.height)
+            ])
+            
         }
         
     }
     
-    
-    
-    
-    func addButton<Button:UIButton>(button:Button, action:Selector?, target:Any?) {
+    func addButton<Button: UIButton>(button: Button, action: Selector?, target: Any?) {
         alertBodyVC.addButton(button: button, action: action, target: target)
     }
     
-    func configureAlertViewControlerProperties(){
-        if let xAxisPaddingFractionOfWidth = xAxisPaddingFractionOfWidth{
+    func configureAlertViewControlerProperties() {
+        if let xAxisPaddingFractionOfWidth = xAxisPaddingFractionOfWidth {
             alertBodyVC.xAxisPaddingFraction = xAxisPaddingFractionOfWidth
         }
-        if let yAxisPaddingFractionOfHeight = yAxisPaddingFractionOfHeight{
+        if let yAxisPaddingFractionOfHeight = yAxisPaddingFractionOfHeight {
             alertBodyVC.yAxisPaddingFraction = yAxisPaddingFractionOfHeight
         }
-        if let titleHeightFraction = titleHeightFraction{
+        if let titleHeightFraction = titleHeightFraction {
             alertBodyVC.titleHeightFraction = titleHeightFraction
         }
-        if let buttonsHeightFraction = buttonsHeightFraction{
+        if let buttonsHeightFraction = buttonsHeightFraction {
             alertBodyVC.titleHeightFraction = buttonsHeightFraction
         }
-        if let alertCornerRadusFractionOfWidath = alertCornerRadusFractionOfWidath{
+        if let alertCornerRadusFractionOfWidath = alertCornerRadusFractionOfWidath {
             alertBodyVC.alertCornerRadusFractionOfWidath = alertCornerRadusFractionOfWidath
         }
-        if let alertBackGroundColor = alertBackGroundColor{
+        if let alertBackGroundColor = alertBackGroundColor {
             alertBodyVC.alertBackGroundColor = alertBackGroundColor
         }
-        if let alertBackgroundOpacity = alertBackgroundOpacity{
+        if let alertBackgroundOpacity = alertBackgroundOpacity {
             alertBodyVC.alertBackgroundOpacity = alertBackgroundOpacity
         }
-        if let titleBackgroundColor = titleBackgroundColor{
+        if let titleBackgroundColor = titleBackgroundColor {
             alertBodyVC.titleBackgroundColor = titleBackgroundColor
         }
-        if let bodyBackgroundColor = bodyBackgroundColor{
+        if let bodyBackgroundColor = bodyBackgroundColor {
             alertBodyVC.bodyBackgroundColor = bodyBackgroundColor
         }
-        if let buttonsViewBackgroundColor = buttonsViewBackgroundColor{
+        if let buttonsViewBackgroundColor = buttonsViewBackgroundColor {
             alertBodyVC.buttonsViewBackgroundColor = buttonsViewBackgroundColor
         }
-        if let alertBorderColor = alertBorderColor{
+        if let alertBorderColor = alertBorderColor {
             alertBodyVC.alertBorderColor = alertBorderColor
         }
-        if let adjustBodyFontToFit = adjustBodyFontToFit{
+        if let adjustBodyFontToFit = adjustBodyFontToFit {
             alertBodyVC.adjustBodyFontToFit = adjustBodyFontToFit
         }
     }
 
 }
-

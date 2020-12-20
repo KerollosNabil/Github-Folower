@@ -18,7 +18,7 @@ class TitleLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(textAlignment:NSTextAlignment) {
+    init(textAlignment: NSTextAlignment) {
         super.init(frame: .zero)
         self.textAlignment = textAlignment
         self.font = UIFont.systemFont(ofSize: 16, weight: .bold)
@@ -28,11 +28,11 @@ class TitleLabel: UILabel {
         super.layoutSubviews()
         if numberOfLines > 0 {
             fitText(maxLines: UInt(numberOfLines))
-        }else{
+        } else {
             fitTextToBounds()
         }
     }
-    private func configure(){
+    private func configure() {
         textColor = .label
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.9

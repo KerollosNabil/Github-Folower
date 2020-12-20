@@ -8,7 +8,7 @@
 import UIKit
 
 class GFFlowLayout: UICollectionViewFlowLayout {
-    var display : CollectionDisplay = .list {
+    var display: CollectionDisplay = .list {
             didSet {
                 
                 self.invalidateLayout()
@@ -24,7 +24,7 @@ class GFFlowLayout: UICollectionViewFlowLayout {
             }
         }
 
-    convenience init(display: CollectionDisplay, containerWidth: CGFloat, minimumLineSpacing:CGFloat = 10, minimumInteritemSpacing:CGFloat = 10) {
+    convenience init(display: CollectionDisplay, containerWidth: CGFloat, minimumLineSpacing: CGFloat = 10, minimumInteritemSpacing: CGFloat = 10) {
             self.init()
 
             self.display = display
@@ -45,7 +45,7 @@ class GFFlowLayout: UICollectionViewFlowLayout {
                 let spacing = CGFloat(column - 1) * minimumLineSpacing
                 let optimisedWidth = (containerWidth - spacing) / CGFloat(column)
                 let oprimisedHeight = optimisedWidth * aspectRatio + constant
-                self.itemSize = CGSize(width: optimisedWidth , height: oprimisedHeight) // keep as square
+                self.itemSize = CGSize(width: optimisedWidth, height: oprimisedHeight) // keep as square
 
             case .list:
                 self.scrollDirection = .vertical
@@ -62,6 +62,5 @@ class GFFlowLayout: UICollectionViewFlowLayout {
 enum CollectionDisplay {
     case inline
     case list
-    case grid(columns: Int, aspectRatio:CGFloat, constant:CGFloat)
+    case grid(columns: Int, aspectRatio: CGFloat, constant: CGFloat)
 }
-

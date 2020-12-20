@@ -9,17 +9,17 @@ import UIKit
 
 class FollowerListVC: DataLoadingViewController {
     
-    enum Section{
+    enum Section {
         case main
     }
     
-    var followers:[Follower] = []
-    var userName:String!
-    var collectionView:UICollectionView!
-    var dataSorce:UICollectionViewDiffableDataSource<Section, Follower>!
+    var followers: [Follower] = []
+    var userName: String!
+    var collectionView: UICollectionView!
+    var dataSorce: UICollectionViewDiffableDataSource<Section, Follower>!
     private var page = 1
     private var hasMoreFollowers = true
-    private var filteredFollowers:[Follower] = []
+    private var filteredFollowers: [Follower] = []
     private var isFiltering = false
 
     override func viewDidLoad() {
@@ -40,12 +40,12 @@ class FollowerListVC: DataLoadingViewController {
         self.reloadCollectionViewLayout(self.view.safeAreaLayoutGuide.layoutFrame.width)
     }
     
-    private func configureViewController(){
+    private func configureViewController() {
         view.backgroundColor = .systemBackground
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    private func configureCollectionView(){
+    private func configureCollectionView() {
         collectionView = createGFFollowersCollectionView()
         view.addSubview(collectionView)
         collectionView.delegate = self
@@ -61,28 +61,29 @@ class FollowerListVC: DataLoadingViewController {
         ])
     }
     
-    private func createGFFollowersCollectionView()->UICollectionView{
-        let cellAcpectRatio:CGFloat = 1.1
-        let constant:CGFloat = 12
-        let desplayMode:CollectionDisplay = .grid(columns: 3, aspectRatio: cellAcpectRatio, constant: constant)
+    private func createGFFollowersCollectionView() -> UICollectionView {
+        let cellAcpectRatio: CGFloat = 1.1
+        let constant: CGFloat = 12
+        let desplayMode: CollectionDisplay = .grid(columns: 3, aspectRatio: cellAcpectRatio, constant: constant)
         let layout = GFFlowLayout(display: desplayMode, containerWidth: view.bounds.width, minimumLineSpacing: 12, minimumInteritemSpacing: 10)
         return UICollectionView(frame: .zero, collectionViewLayout: layout)
     }
 
     private func reloadCollectionViewLayout(_ width: CGFloat) {
-        if let flowLayout = collectionView.collectionViewLayout as? GFFlowLayout{
+        if let flowLayout = collectionView.collectionViewLayout as? GFFlowLayout {
             flowLayout.containerWidth = width
-            flowLayout.display = self.view.traitCollection.verticalSizeClass == .regular ? CollectionDisplay.grid(columns: 3, aspectRatio: 1.1, constant: 12) : CollectionDisplay.grid(columns: 5, aspectRatio: 1.1, constant: 12)
+            let gridForPortraitMode = CollectionDisplay.grid(columns: 3, aspectRatio: 1.1, constant: 12)
+            flowLayout.display = self.view.traitCollection.verticalSizeClass == .regular ?  gridForPortraitMode: CollectionDisplay.grid(columns: 5, aspectRatio: 1.1, constant: 12)
         }
 
     }
     
-    private func getFollowers(page:Int){
+    private func getFollowers(page: Int) {
         showLoadingView()
         NetworkManager.shared.getFollowers(for: userName, page: page) {[weak self] result in
             guard let self = self else { return }
             self.dismissLoadingView()
-            switch result{
+            switch result {
             case .failure(let error): self.presentGFAlertOnMainThread(title: "bad stuff haperns", message: error.rawValue, buttontitle: "Ok")
             case .success(let followers):
                 if followers.count < 100 {self.hasMoreFollowers = false}
@@ -99,8 +100,8 @@ class FollowerListVC: DataLoadingViewController {
         }
     }
     
-    private func configureDataSource(){
-        dataSorce = UICollectionViewDiffableDataSource<Section,Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
+    private func configureDataSource() {
+        dataSorce = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as? FollowerCell
             cell?.set(follower: follower)
             
@@ -108,7 +109,7 @@ class FollowerListVC: DataLoadingViewController {
         })
     }
     
-    private func updateData(for followers : [Follower]){
+    private func updateData(for followers: [Follower]) {
         var snapShot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapShot.appendSections([.main])
         snapShot.appendItems(followers)
@@ -117,7 +118,7 @@ class FollowerListVC: DataLoadingViewController {
         }
     }
     
-    private func configureSearchController(){
+    private func configureSearchController() {
         let searchControler = UISearchController()
         searchControler.searchResultsUpdater = self
         searchControler.searchBar.placeholder = "Search for a username"
@@ -127,12 +128,12 @@ class FollowerListVC: DataLoadingViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
     }
 }
-extension FollowerListVC:UICollectionViewDelegate{
+extension FollowerListVC: UICollectionViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         let scrollViewHeight = scrollView.frame.size.height
-        if offsetY > contentHeight - scrollViewHeight - scrollViewHeight*0.5{
+        if offsetY > contentHeight - scrollViewHeight - scrollViewHeight*0.5 {
             guard hasMoreFollowers else {return}
             page += 1
             self.getFollowers(page: page)
@@ -142,11 +143,11 @@ extension FollowerListVC:UICollectionViewDelegate{
         let followersArray = isFiltering ? filteredFollowers : followers
         let follower = followersArray[indexPath.item]
         
-        let destVC = UserInfoVC(user:follower)
+        let destVC = UserInfoVC(user: follower)
         present(destVC.embedInNavigationController(), animated: true)
     }
 }
-extension FollowerListVC:UISearchResultsUpdating, UISearchBarDelegate{
+extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, !filter.isEmpty else {
             isFiltering = false
@@ -154,7 +155,7 @@ extension FollowerListVC:UISearchResultsUpdating, UISearchBarDelegate{
             
         }
         isFiltering = true
-        filteredFollowers = followers.filter{$0.login.lowercased().contains(filter.lowercased())}
+        filteredFollowers = followers.filter {$0.login.lowercased().contains(filter.lowercased())}
         updateData(for: filteredFollowers)
         
     }

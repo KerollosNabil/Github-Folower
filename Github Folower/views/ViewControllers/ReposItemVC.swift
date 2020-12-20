@@ -14,7 +14,7 @@ class RepoItemVC: ItemInfoVC {
         configureItems()
     }
     
-    private func configureItems(){
+    private func configureItems() {
         infoItemViewOne.set(itemInfoType: .repos, count: user.publicRepos)
         infoItemViewTwo.set(itemInfoType: .gists, count: user.publicGists)
         actionButton.set(backgroungColor: .systemPurple, title: "Github Profile")

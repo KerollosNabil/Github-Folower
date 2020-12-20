@@ -14,8 +14,5 @@ class FavoriteVC: UIViewController {
 
         view.backgroundColor = .systemBlue
     }
-    
-
-    
 
 }

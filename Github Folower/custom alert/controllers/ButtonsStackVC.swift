@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ButtonsStackVC:UIViewController  {
+class ButtonsStackVC: UIViewController {
     
     private var hStack = UIStackView()
-    var fitTextToBound:Bool = true
+    var fitTextToBound: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,7 @@ class ButtonsStackVC:UIViewController  {
         setupTheStack()
     }
     
-    private func setupTheStack(){
+    private func setupTheStack() {
         view.addSubview(hStack)
         hStack.axis = .horizontal
         hStack.alignment = .fill
@@ -26,7 +26,7 @@ class ButtonsStackVC:UIViewController  {
         
         layoutTheStack()
     }
-    private func layoutTheStack(){
+    private func layoutTheStack() {
         
         hStack.spacing = UIStackView.spacingUseSystem
         hStack.layoutMargins = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
@@ -40,13 +40,11 @@ class ButtonsStackVC:UIViewController  {
         ])
     }
     
-    @objc func dismisAlert(){
+    @objc func dismisAlert() {
         parent?.parent?.dismiss(animated: true)
     }
     
-
-    
-    func addButton<Button:UIButton>(button:Button, action:Selector?, target:Any?) {
+    func addButton<Button: UIButton>(button: Button, action: Selector?, target: Any?) {
         if let actionn = action {button.addTarget(target, action: actionn, for: .touchUpInside)}
         button.addTarget(self, action: #selector(dismisAlert), for: .touchUpInside)
         hStack.addArrangedSubview(button)

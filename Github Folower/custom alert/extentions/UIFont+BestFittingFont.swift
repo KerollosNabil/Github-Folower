@@ -15,7 +15,7 @@ public enum TextSizingOption: Equatable {
         switch (lhs, rhs) {
         case (let .preferredLineCount(lines1), let .preferredLineCount(lines2)):
             return lines1 == lines2
-        case (.fillContainer,.fillContainer):
+        case (.fillContainer, .fillContainer):
             return true
         default:
             return false
@@ -32,7 +32,7 @@ extension UIFont {
             let properBounds = CGRect(origin: .zero, size: bounds)
             let largestFontSize = Int(bounds.height)
             let constrainingBounds = CGSize(width: properBounds.width, height: CGFloat.infinity)
-            //guard largestFontSize > 0 else {return nil}
+            // guard largestFontSize > 0 else {return nil}
             
             let bestFittingFontSize: Int? = (1...largestFontSize).reversed().first(where: { fontSize in
                 let font = UIFont(descriptor: fontDescriptor, size: CGFloat(fontSize))
@@ -53,4 +53,3 @@ extension UIFont {
             return UIFont(descriptor: fontDescriptor, size: CGFloat(fontSize))
         }
 }
-

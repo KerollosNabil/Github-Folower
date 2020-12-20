@@ -12,28 +12,28 @@ class FollowerCell: UICollectionViewCell {
     
     private let avatarImageView = AvatarImageView(frame: .zero)
     private let usernameLabel = TitleLabel(textAlignment: .center)
-    var follower:Follower?{
-        didSet{
-            usernameLabel.text = follower?.login
-            avatarImageView.downloadImage(from: follower!.avatarUrl)
+    var follower: Follower? {
+        didSet {
+            guard let follower = follower else {return}
+            usernameLabel.text = follower.login
+            avatarImageView.downloadImage(from: follower.avatarUrl)
         }
     }
-    var padding:CGFloat = 8
-    var labelToImageRatio:CGFloat = 0.20
-    
+    var padding: CGFloat = 8
+    var labelToImageRatio: CGFloat = 0.20
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
     
-    init(frame: CGRect, padding:CGFloat) {
+    init(frame: CGRect, padding: CGFloat) {
         super.init(frame: frame)
         self.padding = padding
         configure()
     }
     
-    func set(follower:Follower){
+    func set(follower: Follower) {
         usernameLabel.text = follower.login
         avatarImageView.downloadImage(from: follower.avatarUrl)
     }
@@ -42,12 +42,12 @@ class FollowerCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(){
+    func configure() {
         setupAvatarImage()
         setupUsernameLabel()
     }
     
-    func setupAvatarImage(){
+    func setupAvatarImage() {
         addSubview(avatarImageView)
         
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -59,7 +59,7 @@ class FollowerCell: UICollectionViewCell {
         ])
     }
     
-    func setupUsernameLabel(){
+    func setupUsernameLabel() {
         addSubview(usernameLabel)
         
         usernameLabel.translatesAutoresizingMaskIntoConstraints = false

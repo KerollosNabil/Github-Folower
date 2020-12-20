@@ -18,7 +18,7 @@ class RoundedButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(backgroungColor:UIColor, title:String?) {
+    init(backgroungColor: UIColor, title: String?) {
         super.init(frame: .zero)
         self.backgroundColor = backgroungColor
         self.setTitle(title, for: .normal)
@@ -31,12 +31,12 @@ class RoundedButton: UIButton {
 
     }
     
-    private func configur(){
+    private func configur() {
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
         translatesAutoresizingMaskIntoConstraints = false
     }
-    func set(backgroungColor:UIColor, title:String?) {
+    func set(backgroungColor: UIColor, title: String?) {
         self.backgroundColor = backgroungColor
         self.setTitle(title, for: .normal)
         configur()

@@ -18,7 +18,7 @@ class SecondaryTitleLabel: UILabel {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    init(fontSize:CGFloat) {
+    init(fontSize: CGFloat) {
         super.init(frame: .zero)
         font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
         configure()
@@ -29,11 +29,11 @@ class SecondaryTitleLabel: UILabel {
         
         if numberOfLines > 0 {
             fitText(maxLines: UInt(numberOfLines))
-        }else{
+        } else {
             fitTextToBounds()
         }
     }
-    private func configure(){
+    private func configure() {
         textColor = .secondaryLabel
         font = UIFont.preferredFont(forTextStyle: .body)
         adjustsFontSizeToFitWidth = true

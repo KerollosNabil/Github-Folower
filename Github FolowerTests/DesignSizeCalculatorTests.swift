@@ -10,10 +10,9 @@ import XCTest
 
 class DesignSizeCalculatorTests: XCTestCase {
     
-    var calcultor:DesignSizeCalculator!
+    var calcultor: DesignSizeCalculator!
     let iPh11Width = 414
     let iPh11Hight = 896
-
 
     override func setUp() {
         super.setUp()
@@ -24,9 +23,8 @@ class DesignSizeCalculatorTests: XCTestCase {
         calcultor = nil
         super.tearDown()
     }
-    
    
-    func testWidthFraction(){
+    func testWidthFraction() {
         XCTAssertEqual(calcultor.widthFraction(isPortrait: true), calcultor.curentViewSizePortrait.width / CGFloat(iPh11Width))
     }
 
